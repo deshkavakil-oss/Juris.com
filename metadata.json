@@ -1,0 +1,6 @@
+{
+  "name": "Juris.com — Law Learning & Legal Research Platform",
+  "description": "Specialized law learning, online legal classes, bare acts library, and AI legal research platform tailored for law students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

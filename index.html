@@ -1,0 +1,3459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juris.com — Law Learning &amp; Legal Research Platform</title>
+    <meta
+      name="description"
+      content="Specialized law learning, online legal classes, bare acts library, and AI legal research platform tailored exclusively for law students."
+    />
+    <meta property="og:title" content="Juris.com — Law Learning &amp; Legal Research Platform" />
+    <meta
+      property="og:description"
+      content="Specialized law learning, online legal classes, bare acts library, and AI legal research platform tailored exclusively for law students."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy-950: #06101f;
+        --navy-900: #0a192f;
+        --navy-800: #112240;
+        --navy-700: #1d3557;
+        --gold-500: #d4af37;
+        --gold-600: #b58d1f;
+        --gold-700: #8f6d10;
+        --gold-100: #fbf6e6;
+        --bg-canvas: #f4f6f9;
+        --surface-white: #ffffff;
+        --surface-muted: #f8fafc;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --border-hairline: #e2e8f0;
+        --border-strong: #cbd5e1;
+        --success-bg: #ecfdf5;
+        --success-text: #065f46;
+        --success-border: #a7f3d0;
+        --danger-bg: #fef2f2;
+        --danger-text: #991b1b;
+        --danger-border: #fecaca;
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 14px;
+        --shadow-sm: 0 1px 2px rgba(10, 25, 47, 0.05);
+        --shadow-card: 0 8px 24px -6px rgba(10, 25, 47, 0.08);
+        --shadow-modal: 0 24px 48px -12px rgba(10, 25, 47, 0.28);
+        --font-serif: "Playfair Display", Georgia, serif;
+        --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+        --ease-settle: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--bg-canvas);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+        color: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--gold-500);
+        outline-offset: 2px;
+      }
+
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1240px;
+        margin-inline: auto;
+        padding-inline: 24px;
+      }
+
+      /* Top Header (3-Zone Contract) */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background-color: var(--navy-900);
+        color: #f8fafc;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 68px;
+      }
+
+      .brand-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        color: #ffffff;
+      }
+
+      .brand-icon {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: rgba(212, 175, 55, 0.14);
+        border: 1px solid rgba(212, 175, 55, 0.45);
+        color: var(--gold-500);
+        flex-shrink: 0;
+      }
+
+      .brand-wordmark {
+        font-family: var(--font-serif);
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+
+      .brand-wordmark span {
+        color: var(--gold-500);
+      }
+
+      .primary-nav {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+
+      .nav-link {
+        position: relative;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: #cbd5e1;
+        white-space: nowrap;
+        flex-shrink: 0;
+        padding-block: 6px;
+        transition: color 160ms var(--ease-settle);
+        background: none;
+        border: 0;
+      }
+
+      .nav-link:hover,
+      .nav-link.is-active {
+        color: #ffffff;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: var(--gold-500);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 180ms var(--ease-settle);
+      }
+
+      .nav-link:hover::after,
+      .nav-link.is-active::after {
+        transform: scaleX(1);
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .credit-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(212, 175, 55, 0.45);
+        color: #f8fafc;
+        font-size: 13px;
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: background-color 160ms var(--ease-settle), border-color 160ms var(--ease-settle);
+      }
+
+      .credit-pill:hover {
+        background-color: rgba(212, 175, 55, 0.16);
+        border-color: var(--gold-500);
+      }
+
+      .credit-pill.is-exhausted {
+        background-color: rgba(153, 27, 27, 0.35);
+        border-color: #f87171;
+        color: #fecaca;
+      }
+
+      .credit-pill.is-pro {
+        background-color: rgba(212, 175, 55, 0.2);
+        border-color: var(--gold-500);
+        color: #fef3c7;
+      }
+
+      .credit-count {
+        font-family: var(--font-mono);
+        color: var(--gold-500);
+      }
+
+      .credit-pill.is-exhausted .credit-count {
+        color: #fca5a5;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: var(--radius-sm);
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: #ffffff;
+      }
+
+      .mobile-drawer {
+        display: none;
+        background-color: var(--navy-800);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 12px 24px 18px;
+      }
+
+      .mobile-drawer.is-open {
+        display: block;
+      }
+
+      .mobile-drawer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .mobile-drawer-link {
+        text-align: left;
+        padding: 11px 12px;
+        border-radius: var(--radius-sm);
+        color: #e2e8f0;
+        font-weight: 500;
+        font-size: 14px;
+        background: none;
+        border: 0;
+      }
+
+      .mobile-drawer-link:hover,
+      .mobile-drawer-link.is-active {
+        background-color: rgba(212, 175, 55, 0.14);
+        color: #ffffff;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background-color: var(--navy-900);
+        color: #f8fafc;
+        padding-block: 52px 44px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .hero-split {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 40px;
+        align-items: stretch;
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hero-kicker {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--gold-500);
+        letter-spacing: 0.02em;
+        margin: 0 0 12px;
+      }
+
+      .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(2.15rem, 3.6vw, 3.35rem);
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+        color: #ffffff;
+        margin: 0 0 18px;
+        text-wrap: balance;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.65;
+        color: #cbd5e1;
+        max-width: 58ch;
+        margin: 0 0 28px;
+      }
+
+      .hero-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 42px;
+        padding: 10px 20px;
+        border-radius: var(--radius-sm);
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+        border: 1px solid transparent;
+        transition: background-color 160ms var(--ease-settle), border-color 160ms var(--ease-settle),
+          color 160ms var(--ease-settle), transform 140ms var(--ease-settle);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .btn-gold {
+        background-color: var(--gold-500);
+        color: var(--navy-950);
+      }
+
+      .btn-gold:hover {
+        background-color: #e0bd4c;
+      }
+
+      .btn-navy {
+        background-color: var(--navy-900);
+        color: #ffffff;
+      }
+
+      .btn-navy:hover {
+        background-color: var(--navy-800);
+      }
+
+      .btn-outline-light {
+        background-color: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.25);
+        color: #f8fafc;
+      }
+
+      .btn-outline-light:hover {
+        background-color: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.45);
+      }
+
+      .btn-outline-dark {
+        background-color: var(--surface-white);
+        border-color: var(--border-strong);
+        color: var(--navy-900);
+      }
+
+      .btn-outline-dark:hover {
+        background-color: var(--surface-muted);
+        border-color: var(--navy-900);
+      }
+
+      .btn[disabled] {
+        opacity: 0.55;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .hero-media-frame {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid rgba(212, 175, 55, 0.35);
+        background: linear-gradient(145deg, var(--navy-800), var(--navy-950));
+        min-height: 300px;
+      }
+
+      .hero-media-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-media-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(10, 25, 47, 0.05) 35%, rgba(10, 25, 47, 0.86) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 22px;
+      }
+
+      .hero-media-caption {
+        font-size: 13.5px;
+        color: #e2e8f0;
+        margin: 0;
+      }
+
+      .hero-media-caption strong {
+        color: var(--gold-500);
+        font-weight: 600;
+      }
+
+      .hero-metrics-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .hero-metric {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .hero-metric-value {
+        font-family: var(--font-serif);
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--gold-500);
+        line-height: 1.2;
+      }
+
+      .hero-metric-label {
+        font-size: 13px;
+        color: #cbd5e1;
+      }
+
+      /* Main Workspace Shell */
+      .workspace-section {
+        padding-block: 44px 64px;
+      }
+
+      .workspace-tabs-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border-hairline);
+      }
+
+      .tab-switcher {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 5px;
+        background-color: var(--surface-white);
+        border: 1px solid var(--border-hairline);
+        border-radius: var(--radius-md);
+      }
+
+      .tab-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 40px;
+        padding: 8px 16px;
+        border: 0;
+        border-radius: 7px;
+        background-color: transparent;
+        color: var(--text-secondary);
+        font-size: 13.5px;
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: background-color 150ms var(--ease-settle), color 150ms var(--ease-settle);
+      }
+
+      .tab-btn:hover {
+        color: var(--navy-900);
+        background-color: var(--bg-canvas);
+      }
+
+      .tab-btn.is-active {
+        background-color: var(--navy-900);
+        color: #ffffff;
+      }
+
+      .workspace-status-line {
+        font-size: 13px;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .tab-panel {
+        display: none;
+      }
+
+      .tab-panel.is-active {
+        display: block;
+      }
+
+      .section-header-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+
+      .section-title {
+        font-family: var(--font-serif);
+        font-size: clamp(1.5rem, 2.4vw, 2rem);
+        font-weight: 700;
+        color: var(--navy-900);
+        margin: 0 0 6px;
+        line-height: 1.2;
+      }
+
+      .section-desc {
+        font-size: 15px;
+        color: var(--text-secondary);
+        margin: 0;
+        max-width: 65ch;
+      }
+
+      /* Surface Cards */
+      .card {
+        background-color: var(--surface-white);
+        border: 1px solid var(--border-hairline);
+        border-radius: var(--radius-md);
+        padding: 24px;
+      }
+
+      /* AI Legal Research Engine */
+      .research-grid {
+        display: grid;
+        grid-template-columns: 1.75fr 0.85fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .research-composer {
+        margin-bottom: 22px;
+      }
+
+      .composer-label-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+
+      .composer-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--navy-900);
+      }
+
+      .composer-credit-note {
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+
+      .composer-input-group {
+        display: flex;
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      .query-input {
+        flex: 1;
+        min-width: 0;
+        min-height: 46px;
+        padding: 10px 14px;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        background-color: var(--surface-white);
+        font-size: 14.5px;
+        color: var(--text-primary);
+        transition: border-color 150ms var(--ease-settle);
+      }
+
+      .query-input:focus {
+        outline: none;
+        border-color: var(--navy-900);
+      }
+
+      .query-input:disabled {
+        background-color: var(--bg-canvas);
+        color: var(--text-muted);
+        cursor: not-allowed;
+      }
+
+      .sample-queries-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+        align-items: center;
+      }
+
+      .sample-label {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-right: 4px;
+      }
+
+      .sample-btn {
+        padding: 6px 11px;
+        font-size: 12.5px;
+        font-weight: 500;
+        color: var(--navy-800);
+        background-color: var(--bg-canvas);
+        border: 1px solid var(--border-hairline);
+        border-radius: var(--radius-sm);
+        white-space: nowrap;
+        transition: border-color 150ms var(--ease-settle), background-color 150ms var(--ease-settle);
+      }
+
+      .sample-btn:hover:not(:disabled) {
+        border-color: var(--gold-600);
+        background-color: var(--gold-100);
+      }
+
+      .sample-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .paywall-inline-banner {
+        display: none;
+        margin-top: 14px;
+        padding: 14px 16px;
+        border-radius: var(--radius-sm);
+        background-color: var(--gold-100);
+        border: 1px solid rgba(181, 141, 31, 0.45);
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .paywall-inline-banner.is-visible {
+        display: flex;
+      }
+
+      .paywall-inline-text {
+        font-size: 13.5px;
+        color: var(--navy-900);
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .ai-response-box {
+        padding: 26px;
+      }
+
+      .response-meta-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding-bottom: 14px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid var(--border-hairline);
+      }
+
+      .response-kicker {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--gold-700);
+      }
+
+      .response-question-title {
+        font-family: var(--font-serif);
+        font-size: 21px;
+        font-weight: 700;
+        color: var(--navy-900);
+        margin: 0 0 18px;
+        line-height: 1.3;
+      }
+
+      .brief-sections {
+        display: grid;
+        gap: 18px;
+      }
+
+      .brief-block {
+        padding-top: 14px;
+        border-top: 1px solid var(--border-hairline);
+      }
+
+      .brief-block:first-child {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .brief-block-title {
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: var(--navy-900);
+        margin: 0 0 8px;
+        text-transform: uppercase;
+      }
+
+      .brief-statute-code {
+        font-family: var(--font-mono);
+        font-size: 13.5px;
+        color: var(--navy-800);
+        background-color: var(--bg-canvas);
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-hairline);
+        margin: 0;
+      }
+
+      .brief-judgments-list,
+      .brief-takeaways-list {
+        margin: 0;
+        padding-left: 18px;
+        display: grid;
+        gap: 8px;
+        color: var(--text-primary);
+      }
+
+      .brief-summary-text {
+        margin: 0;
+        color: var(--text-primary);
+        line-height: 1.7;
+      }
+
+      .history-sidebar {
+        padding: 20px;
+      }
+
+      .history-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy-900);
+        margin: 0 0 12px;
+      }
+
+      .history-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .history-item-btn {
+        width: 100%;
+        text-align: left;
+        padding: 11px 12px;
+        border-radius: var(--radius-sm);
+        background-color: var(--surface-muted);
+        border: 1px solid var(--border-hairline);
+        transition: border-color 150ms var(--ease-settle), background-color 150ms var(--ease-settle);
+      }
+
+      .history-item-btn:hover,
+      .history-item-btn.is-selected {
+        border-color: var(--navy-900);
+        background-color: #ffffff;
+      }
+
+      .history-item-q {
+        display: block;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--navy-900);
+        margin-bottom: 3px;
+      }
+
+      .history-item-sub {
+        display: block;
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      /* Law Classes Module */
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+
+      .filter-btn {
+        min-height: 38px;
+        padding: 7px 14px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-hairline);
+        background-color: var(--surface-white);
+        color: var(--text-secondary);
+        font-size: 13px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color 150ms var(--ease-settle), color 150ms var(--ease-settle),
+          border-color 150ms var(--ease-settle);
+      }
+
+      .filter-btn:hover {
+        border-color: var(--navy-900);
+        color: var(--navy-900);
+      }
+
+      .filter-btn.is-active {
+        background-color: var(--navy-900);
+        border-color: var(--navy-900);
+        color: #ffffff;
+      }
+
+      .classes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .class-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        transition: border-color 160ms var(--ease-settle), box-shadow 160ms var(--ease-settle);
+      }
+
+      .class-card:hover {
+        border-color: var(--border-strong);
+        box-shadow: var(--shadow-card);
+      }
+
+      .card-kicker {
+        font-size: 12.5px;
+        color: var(--text-muted);
+        margin: 0 0 8px;
+      }
+
+      .card-title {
+        font-family: var(--font-serif);
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--navy-900);
+        margin: 0 0 8px;
+        line-height: 1.3;
+      }
+
+      .card-excerpt {
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin: 0;
+        line-height: 1.55;
+      }
+
+      .class-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 14px;
+        border-top: 1px solid var(--border-hairline);
+      }
+
+      .class-faculty {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .completed-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--success-text);
+      }
+
+      /* Notes & Bare Acts Library */
+      .library-intro-banner {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 24px;
+        align-items: center;
+        margin-bottom: 24px;
+        padding: 20px 24px;
+      }
+
+      .library-intro-img {
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        height: 156px;
+        border: 1px solid var(--border-hairline);
+        background-color: var(--navy-900);
+      }
+
+      .library-intro-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .notes-controls-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .library-search-input {
+        min-width: 240px;
+        max-width: 340px;
+        width: 100%;
+        min-height: 40px;
+        padding: 8px 12px;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        background-color: var(--surface-white);
+        font-size: 13.5px;
+      }
+
+      .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .note-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .note-citation {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--gold-700);
+        margin: 0 0 6px;
+      }
+
+      /* Pricing Module */
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .pricing-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+      }
+
+      .pricing-card.is-popular {
+        border-color: var(--navy-900);
+        box-shadow: var(--shadow-card);
+      }
+
+      .pricing-card.is-current {
+        border-color: var(--gold-600);
+      }
+
+      .plan-tag {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--gold-700);
+        margin: 0 0 6px;
+      }
+
+      .plan-name {
+        font-family: var(--font-serif);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--navy-900);
+        margin: 0 0 10px;
+      }
+
+      .plan-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 14px;
+      }
+
+      .plan-price {
+        font-family: var(--font-serif);
+        font-size: 34px;
+        font-weight: 700;
+        color: var(--navy-900);
+        line-height: 1;
+      }
+
+      .plan-period {
+        font-size: 13.5px;
+        color: var(--text-muted);
+      }
+
+      .plan-features {
+        margin: 0;
+        padding: 16px 0 0;
+        border-top: 1px solid var(--border-hairline);
+        list-style: none;
+        display: grid;
+        gap: 10px;
+        font-size: 13.5px;
+        color: var(--text-primary);
+      }
+
+      .plan-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .feature-check {
+        color: var(--gold-600);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* Support & Contact Section */
+      .contact-section {
+        background-color: var(--surface-white);
+        border-top: 1px solid var(--border-hairline);
+        padding-block: 56px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 36px;
+        align-items: start;
+      }
+
+      .contact-details-list {
+        display: grid;
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .contact-item {
+        padding: 16px;
+        border: 1px solid var(--border-hairline);
+        border-radius: var(--radius-sm);
+        background-color: var(--surface-muted);
+      }
+
+      .contact-item-label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 4px;
+      }
+
+      .contact-item-value {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--navy-900);
+      }
+
+      .contact-item-value:hover {
+        color: var(--gold-700);
+        text-decoration: underline;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .form-row-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .field-label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--navy-900);
+        margin-bottom: 6px;
+      }
+
+      .field-input,
+      .field-textarea,
+      .field-select {
+        width: 100%;
+        min-height: 42px;
+        padding: 9px 12px;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        background-color: var(--surface-white);
+        font-size: 14px;
+      }
+
+      .field-textarea {
+        min-height: 96px;
+        resize: vertical;
+      }
+
+      .form-feedback {
+        display: none;
+        padding: 12px 14px;
+        border-radius: var(--radius-sm);
+        font-size: 13.5px;
+        font-weight: 500;
+      }
+
+      .form-feedback.is-success {
+        display: block;
+        background-color: var(--success-bg);
+        color: var(--success-text);
+        border: 1px solid var(--success-border);
+      }
+
+      .form-feedback.is-error {
+        display: block;
+        background-color: var(--danger-bg);
+        color: var(--danger-text);
+        border: 1px solid var(--danger-border);
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: var(--navy-950);
+        color: #cbd5e1;
+        padding-block: 36px 28px;
+      }
+
+      .footer-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-brand {
+        font-family: var(--font-serif);
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 8px;
+      }
+
+      .footer-brand span {
+        color: var(--gold-500);
+      }
+
+      .footer-disclaimer {
+        font-size: 13.5px;
+        color: #94a3b8;
+        margin: 0;
+        max-width: 52ch;
+      }
+
+      .footer-contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13.5px;
+      }
+
+      .footer-contact-links a:hover {
+        color: var(--gold-500);
+      }
+
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        font-size: 13px;
+        color: #94a3b8;
+      }
+
+      /* Modals */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        background-color: rgba(6, 16, 31, 0.72);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .modal-backdrop.is-open {
+        display: flex;
+      }
+
+      .modal-dialog {
+        width: 100%;
+        max-width: 620px;
+        max-height: 90vh;
+        overflow-y: auto;
+        background-color: var(--surface-white);
+        border: 1px solid var(--border-hairline);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-modal);
+        padding: 28px;
+      }
+
+      .modal-dialog.is-wide {
+        max-width: 820px;
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border-hairline);
+      }
+
+      .modal-kicker {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: var(--gold-700);
+        margin: 0 0 4px;
+      }
+
+      .modal-title {
+        font-family: var(--font-serif);
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--navy-900);
+        margin: 0;
+        line-height: 1.25;
+      }
+
+      .modal-close-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-hairline);
+        background-color: var(--surface-muted);
+        color: var(--navy-900);
+        font-size: 18px;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .modal-close-btn:hover {
+        background-color: var(--bg-canvas);
+        border-color: var(--navy-900);
+      }
+
+      .video-stage {
+        position: relative;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background-color: var(--navy-950);
+        aspect-ratio: 16 / 9;
+        margin-bottom: 18px;
+        border: 1px solid var(--border-hairline);
+      }
+
+      .video-stage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.78;
+      }
+
+      .video-stage-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(6, 16, 31, 0.25) 0%, rgba(6, 16, 31, 0.88) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 18px;
+        color: #ffffff;
+      }
+
+      .video-controls-bar {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .video-progress-track {
+        flex: 1;
+        height: 6px;
+        background-color: rgba(255, 255, 255, 0.24);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .video-progress-fill {
+        height: 100%;
+        width: 0%;
+        background-color: var(--gold-500);
+        transition: width 250ms linear;
+      }
+
+      .outline-list {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        display: grid;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .upgrade-plan-choices {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .upgrade-choice-btn {
+        text-align: left;
+        padding: 14px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-strong);
+        background-color: var(--surface-muted);
+      }
+
+      .upgrade-choice-btn.is-selected {
+        border-color: var(--navy-900);
+        background-color: var(--gold-100);
+      }
+
+      .payment-methods {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      .pay-method-btn {
+        min-height: 38px;
+        padding: 6px 14px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-strong);
+        background-color: var(--surface-white);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .pay-method-btn.is-selected {
+        background-color: var(--navy-900);
+        border-color: var(--navy-900);
+        color: #ffffff;
+      }
+
+      .reader-body {
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--text-primary);
+        white-space: pre-line;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 1080px) {
+        .primary-nav {
+          display: none;
+        }
+        .mobile-menu-btn {
+          display: inline-flex;
+        }
+        .classes-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .pricing-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .research-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 820px) {
+        .hero-split,
+        .library-intro-banner,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-metrics-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .notes-grid {
+          grid-template-columns: 1fr;
+        }
+        .upgrade-plan-choices {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding-inline: 16px;
+        }
+        .header-inner {
+          min-height: 60px;
+          gap: 10px;
+        }
+        .credit-pill {
+          padding: 6px 10px;
+          font-size: 12px;
+        }
+        .composer-input-group,
+        .form-row-2 {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+        }
+        .classes-grid,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#home" class="brand-link" data-nav="home">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              <path d="M12 2v3" />
+            </svg>
+          </span>
+          <span class="brand-wordmark">Juris<span>.com</span></span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button type="button" class="nav-link is-active" data-nav="home">Home</button>
+          <button type="button" class="nav-link" data-nav="classes">Law Classes</button>
+          <button type="button" class="nav-link" data-nav="research">AI Legal Research</button>
+          <button type="button" class="nav-link" data-nav="notes">Notes &amp; Bare Acts</button>
+          <button type="button" class="nav-link" data-nav="pricing">Pricing Plans</button>
+          <button type="button" class="nav-link" data-nav="contact">Contact</button>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            id="creditTrackerPill"
+            class="credit-pill tabular-nums"
+            title="AI Research query credit status"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+              <path d="M7 21h10" />
+              <path d="M12 3v18" />
+              <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+            </svg>
+            <span id="creditTrackerText">Free AI Questions Left: <span class="credit-count" id="headerCreditsCount">5 / 5</span></span>
+          </button>
+
+          <button
+            type="button"
+            id="mobileMenuBtn"
+            class="mobile-menu-btn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileDrawer" class="mobile-drawer" aria-label="Mobile navigation">
+        <div class="mobile-drawer-links">
+          <button type="button" class="mobile-drawer-link is-active" data-nav="home">Home</button>
+          <button type="button" class="mobile-drawer-link" data-nav="classes">Law Classes</button>
+          <button type="button" class="mobile-drawer-link" data-nav="research">AI Legal Research</button>
+          <button type="button" class="mobile-drawer-link" data-nav="notes">Notes &amp; Bare Acts</button>
+          <button type="button" class="mobile-drawer-link" data-nav="pricing">Pricing Plans</button>
+          <button type="button" class="mobile-drawer-link" data-nav="contact">Contact</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Home / Hero Band -->
+      <section id="home" class="hero-section">
+        <div class="container">
+          <div class="hero-split">
+            <div class="hero-copy">
+              <p class="hero-kicker">Academic Legal Learning &amp; Case Research</p>
+              <h1 class="hero-title">Master Indian Law, Case Briefs, and Moot Advocacy in One Study Desk</h1>
+              <p class="hero-subtitle">
+                Built exclusively for LL.B., LL.M., Judiciary, and CLAT PG students. Stream structured video classes, cross-reference IPC/CrPC with BNS/BNSS/BSA statutes, and run instant AI legal research starting with 5 free queries.
+              </p>
+              <div class="hero-cta-row">
+                <button type="button" class="btn btn-gold" data-jump-tab="research">
+                  Ask AI Legal Research
+                </button>
+                <button type="button" class="btn btn-outline-light" data-jump-tab="classes">
+                  Explore Law Classes
+                </button>
+              </div>
+            </div>
+
+            <div class="hero-media-frame">
+              <img
+                src="/src/assets/images/hero_law_library_1795458387750.jpg"
+                alt="Law students reading bound statutes in a sunlit academic law library"
+                referrerpolicy="no-referrer"
+                onerror="this.style.display='none'"
+              />
+              <div class="hero-media-scrim">
+                <p class="hero-media-caption">
+                  <strong>Updated 2026 Curriculum:</strong> Full statutory mapping across Constitution, BNS 2023, BNSS 2023, BSA 2023, Contract Law, and Torts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-metrics-strip tabular-nums">
+            <div class="hero-metric">
+              <span class="hero-metric-value">120+</span>
+              <span class="hero-metric-label">Structured Subject Video Lectures</span>
+            </div>
+            <div class="hero-metric">
+              <span class="hero-metric-value">BNS &middot; BNSS</span>
+              <span class="hero-metric-label">New Criminal Laws Side-by-Side Mapped</span>
+            </div>
+            <div class="hero-metric">
+              <span class="hero-metric-value">5 / 5</span>
+              <span class="hero-metric-label">Free AI Case Research Queries Included</span>
+            </div>
+            <div class="hero-metric">
+              <span class="hero-metric-value">&#8377;29 / mo</span>
+              <span class="hero-metric-label">Student Pass for Unlimited Access</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Student Learning & Research Hub -->
+      <section id="workspace" class="workspace-section">
+        <div class="container">
+          <div class="workspace-tabs-bar">
+            <div class="tab-switcher" role="tablist" aria-label="Student learning modules">
+              <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" data-tab="research">
+                AI Legal Research
+              </button>
+              <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="classes">
+                Law Classes
+              </button>
+              <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="notes">
+                Notes &amp; Bare Acts
+              </button>
+              <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="pricing">
+                Pricing Plans
+              </button>
+            </div>
+
+            <div class="workspace-status-line tabular-nums">
+              <span>Current Plan: <strong id="activePlanBadge">Free Student Starter</strong></span>
+              <span aria-hidden="true">&middot;</span>
+              <span id="workspaceCreditsLabel">5 Free Queries Remaining</span>
+            </div>
+          </div>
+
+          <!-- TAB 1: AI Legal Research Engine -->
+          <div id="panel-research" class="tab-panel is-active" role="tabpanel">
+            <div class="section-header-row">
+              <div>
+                <h2 class="section-title">AI Legal Research &amp; Case Brief Engine</h2>
+                <p class="section-desc">
+                  Ask statutory interpretation questions, compare IPC/BNS provisions, or prepare moot court propositions. Receive structured briefs with sections, landmark rulings, and exam takeaways.
+                </p>
+              </div>
+            </div>
+
+            <div class="research-grid">
+              <div>
+                <form id="aiResearchForm" class="card research-composer">
+                  <div class="composer-label-row">
+                    <label for="researchQueryInput" class="composer-label">
+                      Enter your legal query, statutory section, or case law prompt
+                    </label>
+                    <span class="composer-credit-note tabular-nums" id="composerCreditCounter">
+                      Credits remaining: 5 / 5
+                    </span>
+                  </div>
+
+                  <div class="composer-input-group">
+                    <input
+                      id="researchQueryInput"
+                      type="text"
+                      class="query-input"
+                      placeholder="e.g., Explain Article 21 due process in Maneka Gandhi or BNS Section 103 vs IPC 302"
+                      autocomplete="off"
+                    />
+                    <button type="submit" id="askAiBtn" class="btn btn-navy">
+                      Research Query
+                    </button>
+                  </div>
+
+                  <div class="sample-queries-row" aria-label="Sample legal queries">
+                    <span class="sample-label">Try sample queries:</span>
+                    <button type="button" class="sample-btn" data-sample="Explain BNS Section 103 vs IPC Section 302 with key ingredients">
+                      BNS 103 vs IPC 302
+                    </button>
+                    <button type="button" class="sample-btn" data-sample="Basic Structure Doctrine in Kesavananda Bharati v. State of Kerala">
+                      Kesavananda Bharati
+                    </button>
+                    <button type="button" class="sample-btn" data-sample="Essentials of a valid contract under Section 10 of Indian Contract Act">
+                      Section 10 Contract Act
+                    </button>
+                    <button type="button" class="sample-btn" data-sample="Rule of Strict Liability vs Absolute Liability in Law of Torts">
+                      Strict vs Absolute Liability
+                    </button>
+                    <button type="button" class="sample-btn" data-sample="Anticipatory Bail conditions under BNSS Section 482 and Arnesh Kumar">
+                      BNSS 482 Anticipatory Bail
+                    </button>
+                  </div>
+
+                  <div id="paywallInlineBanner" class="paywall-inline-banner">
+                    <p class="paywall-inline-text">
+                      Free limit reached (0 / 5 queries remaining). Upgrade to Juris Student Pro for &#8377;29/month to unlock unlimited AI research.
+                    </p>
+                    <button type="button" id="inlineUpgradeBtn" class="btn btn-gold">
+                      Upgrade for &#8377;29/mo
+                    </button>
+                  </div>
+                </form>
+
+                <article id="aiResponseBox" class="card ai-response-box" aria-live="polite">
+                  <!-- Populated dynamically by JS -->
+                </article>
+              </div>
+
+              <aside class="card history-sidebar" aria-label="Session research history">
+                <h3 class="history-title">Session Research Briefs</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0 0 14px;">
+                  Revisit generated briefs from this session without spending additional credits.
+                </p>
+                <div id="researchHistoryList" class="history-list">
+                  <!-- Populated dynamically by JS -->
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- TAB 2: Online Law Classes & Lectures -->
+          <div id="panel-classes" class="tab-panel" role="tabpanel">
+            <div class="section-header-row">
+              <div>
+                <h2 class="section-title">Online Law Classes &amp; Video Modules</h2>
+                <p class="section-desc">
+                  Subject-wise structured video lectures taught by legal academics and practicing counsel, complete with bare act timestamps and exam outlines.
+                </p>
+              </div>
+            </div>
+
+            <div id="classSubjectFilters" class="filter-bar" role="group" aria-label="Filter classes by subject">
+              <!-- Populated dynamically by JS -->
+            </div>
+
+            <div id="classesGrid" class="classes-grid">
+              <!-- Populated dynamically by JS -->
+            </div>
+          </div>
+
+          <!-- TAB 3: Student Notes & Research Library -->
+          <div id="panel-notes" class="tab-panel" role="tabpanel">
+            <div class="section-header-row">
+              <div>
+                <h2 class="section-title">Student Notes &amp; Legal Research Library</h2>
+                <p class="section-desc">
+                  Curated bare act digests, landmark Supreme Court case briefs, semester fast-track revision notes, and winning moot court memorial templates.
+                </p>
+              </div>
+            </div>
+
+            <div class="card library-intro-banner">
+              <div>
+                <p class="card-kicker">Updated Academic Repository &middot; 2026 Edition</p>
+                <h3 class="card-title" style="font-size: 22px;">Bare Acts, Case Digests &amp; Moot Memorials</h3>
+                <p class="card-excerpt">
+                  Every document is formatted for quick semester revision, judiciary mains answer structuring, and oral moot court submissions. Open any record in full reader mode.
+                </p>
+              </div>
+              <div class="library-intro-img">
+                <img
+                  src="/src/assets/images/bare_acts_desk_1795458388656.jpg"
+                  alt="Hardcover law textbooks and handwritten case brief notes on slate desk"
+                  referrerpolicy="no-referrer"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+            </div>
+
+            <div class="notes-controls-row">
+              <div id="notesSubTabs" class="filter-bar" style="margin-bottom: 0;" role="tablist" aria-label="Library categories">
+                <button type="button" class="filter-btn is-active" data-notes-tab="bare-acts">Bare Acts</button>
+                <button type="button" class="filter-btn" data-notes-tab="judgments">Landmark Judgments</button>
+                <button type="button" class="filter-btn" data-notes-tab="revision">Exam Revision Notes</button>
+                <button type="button" class="filter-btn" data-notes-tab="memorials">Sample Moot Court Memorials</button>
+              </div>
+
+              <input
+                id="librarySearchInput"
+                type="search"
+                class="library-search-input"
+                placeholder="Search sections, cases, or topics..."
+                aria-label="Search student notes and bare acts"
+              />
+            </div>
+
+            <div id="notesGrid" class="notes-grid">
+              <!-- Populated dynamically by JS -->
+            </div>
+          </div>
+
+          <!-- TAB 4: Pricing & Membership Packages -->
+          <div id="panel-pricing" class="tab-panel" role="tabpanel">
+            <div class="section-header-row">
+              <div>
+                <h2 class="section-title">Student-Friendly Pricing &amp; Membership Passes</h2>
+                <p class="section-desc">
+                  Start free with 5 AI research queries and public notes, or unlock unlimited case research, full video lectures, and drafting templates at student pricing.
+                </p>
+              </div>
+            </div>
+
+            <div id="pricingGrid" class="pricing-grid tabular-nums">
+              <!-- Populated dynamically by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Support & Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="contact-grid">
+            <div>
+              <h2 class="section-title">Student Support &amp; Academic Helpdesk</h2>
+              <p class="section-desc">
+                Need help with semester exam notes, bulk university society passes, or subscription activation? Reach our legal education support team directly.
+              </p>
+
+              <div class="contact-details-list">
+                <div class="contact-item">
+                  <span class="contact-item-label">Phone / WhatsApp Support</span>
+                  <a href="tel:+918240642015" class="contact-item-value tabular-nums">+91 8240642015</a>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-item-label">Official Support Email</span>
+                  <a href="mailto:deshkavakil@gmail.com" class="contact-item-value">deshkavakil@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <form id="contactSupportForm" class="card form-grid" novalidate>
+              <h3 class="card-title" style="margin-bottom: 4px;">Send a Student Inquiry</h3>
+              <div class="form-row-2">
+                <div>
+                  <label for="contactName" class="field-label">Full Name</label>
+                  <input id="contactName" type="text" class="field-input" placeholder="Ananya Sharma" required />
+                </div>
+                <div>
+                  <label for="contactEmail" class="field-label">Student Email</label>
+                  <input id="contactEmail" type="email" class="field-input" placeholder="ananya@lawschool.edu.in" required />
+                </div>
+              </div>
+              <div>
+                <label for="contactTopic" class="field-label">Inquiry Topic</label>
+                <select id="contactTopic" class="field-select">
+                  <option value="Subscription & Billing">Subscription &amp; Student Pass Support</option>
+                  <option value="Moot Court & Notes Request">Moot Court Memorials &amp; Bare Acts Request</option>
+                  <option value="University Batch Access">Law College / Batch Access</option>
+                  <option value="Technical Support">Technical Support</option>
+                </select>
+              </div>
+              <div>
+                <label for="contactMessage" class="field-label">Message</label>
+                <textarea id="contactMessage" class="field-textarea" placeholder="Write your question or syllabus request..." required></textarea>
+              </div>
+              <div id="contactFormFeedback" class="form-feedback" role="status"></div>
+              <div>
+                <button type="submit" class="btn btn-navy">Submit Support Request</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <p class="footer-brand">Juris<span>.com</span></p>
+            <p class="footer-disclaimer">
+              Designed for Law Students and Educational Research Purposes.
+            </p>
+          </div>
+
+          <div class="footer-contact-links tabular-nums">
+            <span>Phone / WhatsApp: <a href="tel:+918240642015">+91 8240642015</a></span>
+            <span>Email: <a href="mailto:deshkavakil@gmail.com">deshkavakil@gmail.com</a></span>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; 2026 juris.com - All Rights Reserved.</span>
+          <span>Constitutional Law &middot; BNS / BNSS / BSA &middot; Contract Law &middot; Torts &middot; Moot Prep</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal 1: Upgrade to Juris Student Pro (Triggered when credits hit 0) -->
+    <div id="upgradeModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="upgradeModalTitle">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div>
+            <p class="modal-kicker">Free Query Limit Reached</p>
+            <h2 id="upgradeModalTitle" class="modal-title">Upgrade to Juris Student Pro</h2>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal="upgradeModalBackdrop" aria-label="Close upgrade modal">&times;</button>
+        </div>
+
+        <p style="margin: 0 0 18px; color: var(--text-secondary); font-size: 14.5px;">
+          You have used all 5 free AI legal research questions. Activate a student pass to continue unlimited case research, unlock all video classes, and download Bare Act revision briefs.
+        </p>
+
+        <div id="upgradePlanChoices" class="upgrade-plan-choices tabular-nums">
+          <button type="button" class="upgrade-choice-btn is-selected" data-upgrade-plan="monthly">
+            <div style="font-size: 12px; font-weight: 700; color: var(--gold-700);">Most Popular</div>
+            <div style="font-weight: 700; color: var(--navy-900); margin: 3px 0;">Special Student Pass</div>
+            <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--navy-900);">&#8377;29 <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 500; color: var(--text-muted);">/ Month</span></div>
+          </button>
+
+          <button type="button" class="upgrade-choice-btn" data-upgrade-plan="semester">
+            <div style="font-size: 12px; font-weight: 700; color: var(--gold-700);">Save 15%</div>
+            <div style="font-weight: 700; color: var(--navy-900); margin: 3px 0;">Semester Pass</div>
+            <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--navy-900);">&#8377;149 <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 500; color: var(--text-muted);">/ 6 Months</span></div>
+          </button>
+
+          <button type="button" class="upgrade-choice-btn" data-upgrade-plan="annual">
+            <div style="font-size: 12px; font-weight: 700; color: var(--gold-700);">Best Value</div>
+            <div style="font-weight: 700; color: var(--navy-900); margin: 3px 0;">Annual Scholar</div>
+            <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--navy-900);">&#8377;249 <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 500; color: var(--text-muted);">/ Year</span></div>
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-outline-dark" data-close-modal="upgradeModalBackdrop">
+            Review Existing Notes
+          </button>
+          <button type="button" id="proceedToCheckoutBtn" class="btn btn-gold">
+            Continue with &#8377;29 Pass
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: Payment Confirmation Modal -->
+    <div id="paymentModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div>
+            <p class="modal-kicker">Student Membership Checkout</p>
+            <h2 id="paymentModalTitle" class="modal-title">Confirm Your Student Pass</h2>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal="paymentModalBackdrop" aria-label="Close payment modal">&times;</button>
+        </div>
+
+        <form id="paymentConfirmForm" class="form-grid" novalidate>
+          <div style="padding: 14px 16px; border-radius: var(--radius-sm); background-color: var(--bg-canvas); border: 1px solid var(--border-hairline); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div>
+              <div style="font-size: 12px; color: var(--text-muted);">Selected Package</div>
+              <div id="checkoutPlanName" style="font-weight: 700; color: var(--navy-900); font-size: 16px;">Special Student Pass</div>
+            </div>
+            <div id="checkoutPlanPrice" class="tabular-nums" style="font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--navy-900);">&#8377;29 / Month</div>
+          </div>
+
+          <div class="form-row-2">
+            <div>
+              <label for="checkoutStudentName" class="field-label">Student Full Name</label>
+              <input id="checkoutStudentName" type="text" class="field-input" placeholder="Rohan Verma" required />
+            </div>
+            <div>
+              <label for="checkoutStudentEmail" class="field-label">Email Address</label>
+              <input id="checkoutStudentEmail" type="email" class="field-input" placeholder="rohan.llb@university.edu.in" required />
+            </div>
+          </div>
+
+          <div>
+            <label class="field-label">Select Payment Method</label>
+            <div class="payment-methods" id="paymentMethodsGroup">
+              <button type="button" class="pay-method-btn is-selected" data-pay-method="UPI">UPI / GPay / PhonePe</button>
+              <button type="button" class="pay-method-btn" data-pay-method="Card">Student Debit / Credit Card</button>
+              <button type="button" class="pay-method-btn" data-pay-method="NetBanking">NetBanking</button>
+            </div>
+          </div>
+
+          <div id="paymentFormFeedback" class="form-feedback" role="status"></div>
+
+          <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; flex-wrap: wrap; padding-top: 6px;">
+            <button type="button" class="btn btn-outline-dark" data-close-modal="paymentModalBackdrop">Cancel</button>
+            <button type="submit" id="confirmPaymentBtn" class="btn btn-gold">Confirm &amp; Activate Pass</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal 3: Video Lecture & Class Outline Modal -->
+    <div id="classModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="classModalTitle">
+      <div class="modal-dialog is-wide">
+        <div class="modal-header">
+          <div>
+            <p id="classModalKicker" class="modal-kicker">Constitutional Law</p>
+            <h2 id="classModalTitle" class="modal-title">Lecture Title</h2>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal="classModalBackdrop" aria-label="Close lecture viewer">&times;</button>
+        </div>
+
+        <div class="video-stage">
+          <img
+            src="/src/assets/images/moot_court_lecture_1795458388109.jpg"
+            alt="Law professor lecturing inside moot court hall"
+            referrerpolicy="no-referrer"
+            onerror="this.style.display='none'"
+          />
+          <div class="video-stage-overlay">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+              <span id="lectureFacultyLabel" style="font-size: 13px; font-weight: 600; color: #f8fafc;">Prof. A. Chatterjee</span>
+              <span id="lecturePlaybackStatus" class="tabular-nums" style="font-family: var(--font-mono); font-size: 12.5px; color: var(--gold-500);">00:00 / 42:00</span>
+            </div>
+
+            <div>
+              <p id="lectureActiveChapter" style="margin: 0 0 12px; font-size: 14px; font-weight: 600; color: #f8fafc;">
+                Chapter 1: Constitutional Genesis &amp; Statutory Framework
+              </p>
+              <div class="video-controls-bar">
+                <button type="button" id="lecturePlayToggle" class="btn btn-gold" style="min-height: 36px; padding: 6px 14px; font-size: 13px;">
+                  Play Lecture
+                </button>
+                <div class="video-progress-track">
+                  <div id="lectureProgressFill" class="video-progress-fill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; gap: 16px;">
+          <div>
+            <h3 style="font-size: 14px; font-weight: 700; color: var(--navy-900); margin: 0 0 6px;">Lecture Outline &amp; Exam Focus</h3>
+            <ul id="classModalOutline" class="outline-list"></ul>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid var(--border-hairline);">
+            <span id="classModalSections" style="font-family: var(--font-mono); font-size: 12.5px; color: var(--text-secondary);"></span>
+            <button type="button" id="toggleCompleteClassBtn" class="btn btn-navy">
+              Mark as Completed
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4: Notes & Bare Acts Academic Reader Modal -->
+    <div id="readerModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="readerModalTitle">
+      <div class="modal-dialog is-wide">
+        <div class="modal-header">
+          <div>
+            <p id="readerModalKicker" class="modal-kicker">Bare Act Digest</p>
+            <h2 id="readerModalTitle" class="modal-title">Document Title</h2>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal="readerModalBackdrop" aria-label="Close document reader">&times;</button>
+        </div>
+
+        <p id="readerModalCitation" style="font-family: var(--font-mono); font-size: 13px; color: var(--gold-700); margin: 0 0 16px;"></p>
+        <div id="readerModalBody" class="reader-body"></div>
+
+        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--border-hairline);">
+          <button type="button" id="copyReaderTextBtn" class="btn btn-outline-dark">Copy Text</button>
+          <button type="button" class="btn btn-navy" data-close-modal="readerModalBackdrop">Done Reading</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // -------------------------------------------------------------------
+        // 1. Curated Academic Datasets
+        // -------------------------------------------------------------------
+        const PRICING_PLANS = [
+          {
+            id: "free",
+            tag: "Starter Access",
+            name: "Free Student Starter",
+            price: "₹0",
+            period: "Forever",
+            amount: 0,
+            cta: "Active Starter Plan",
+            features: [
+              "5 Free AI Research Questions",
+              "Access to Public Notes & Bare Act Index",
+              "Sample Moot Memorial Previews",
+            ],
+          },
+          {
+            id: "monthly",
+            tag: "Most Popular",
+            name: "Special Student Pass",
+            price: "₹29",
+            period: "/ Month",
+            amount: 29,
+            popular: true,
+            cta: "Subscribe Now",
+            features: [
+              "Unlimited AI Case Research",
+              "Full Video Class Access across 6 Subjects",
+              "Bare Acts Search & Moot Court Summaries",
+            ],
+          },
+          {
+            id: "semester",
+            tag: "Special Offer · Save 15%",
+            name: "Semester Pass",
+            price: "₹149",
+            period: "/ 6 Months",
+            amount: 149,
+            cta: "Upgrade",
+            features: [
+              "Everything in Special Student Pass",
+              "Downloadable PDF Study Notes",
+              "Exam Fast-Track Preparation Briefs",
+            ],
+          },
+          {
+            id: "annual",
+            tag: "Best Value",
+            name: "Annual Scholar Pass",
+            price: "₹249",
+            period: "/ Year",
+            amount: 249,
+            cta: "Upgrade",
+            features: [
+              "Complete Platform Access",
+              "Internship Assistance & CV Review",
+              "Legal Drafting Templates & Plaints",
+            ],
+          },
+        ];
+
+        const LAW_CLASSES = [
+          {
+            id: "cls-const-1",
+            subject: "Constitutional Law",
+            duration: "42 mins",
+            faculty: "Prof. A. Chatterjee",
+            title: "Article 21 & Procedure Established by Law: Gopalan to Puttaswamy",
+            excerpt: "Traces judicial expansion of personal liberty, due process safeguards, and informational privacy.",
+            sections: "Arts. 14, 19, 21 · Constitution of India",
+            outline: [
+              "00:00 — Textual reading of Article 21 and A.K. Gopalan v. State of Madras (1950)",
+              "11:20 — Golden Triangle doctrine established in Maneka Gandhi v. Union of India (1978)",
+              "24:10 — Nine-judge bench privacy framework in K.S. Puttaswamy (2017)",
+              "35:00 — Structuring 15-mark university and Judiciary Mains answers",
+            ],
+          },
+          {
+            id: "cls-const-2",
+            subject: "Constitutional Law",
+            duration: "38 mins",
+            faculty: "Prof. Meenakshi Rao",
+            title: "Writ Jurisdiction under Articles 32 & 226: Habeas Corpus to Certiorari",
+            excerpt: "Distinguishes Supreme Court fundamental rights enforcement from High Court wider writ powers.",
+            sections: "Arts. 32, 226, 227 · Constitution of India",
+            outline: [
+              "00:00 — Locus standi and Public Interest Litigation evolution",
+              "10:15 — Five prerogative writs with practical courtroom illustrations",
+              "23:40 — Alternative remedy rule and territorial jurisdiction under Art. 226(2)",
+              "32:00 — Comparative table for quick exam recall",
+            ],
+          },
+          {
+            id: "cls-bns-1",
+            subject: "IPC / BNS",
+            duration: "46 mins",
+            faculty: "Adv. Siddharth Kulkarni",
+            title: "Culpable Homicide & Murder: IPC 299/300 Mapped to BNS Sections 100–103",
+            excerpt: "Side-by-side statutory analysis of intention, knowledge, exceptions, and mob lynching provisions.",
+            sections: "BNS Secs. 100–103 · IPC Secs. 299–302",
+            outline: [
+              "00:00 — Transition matrix from IPC 1860 to Bharatiya Nyaya Sanhita 2023",
+              "12:30 — Virsa Singh test for clause thirdly of Murder (Sec. 101 BNS)",
+              "27:00 — Grave and sudden provocation: K.M. Nanavati case analysis",
+              "38:30 — New BNS Section 103(2) on group/mob-driven murder",
+            ],
+          },
+          {
+            id: "cls-bns-2",
+            subject: "IPC / BNS",
+            duration: "35 mins",
+            faculty: "Adv. Siddharth Kulkarni",
+            title: "Criminal Conspiracy, Common Intention & Common Object under BNS",
+            excerpt: "Clarifies joint liability distinctions between Section 3(5) BNS (IPC 34) and Section 190 BNS (IPC 149).",
+            sections: "BNS Secs. 3(5), 61, 190 · IPC Secs. 34, 120B, 149",
+            outline: [
+              "00:00 — Prior meeting of minds in Barendra Kumar Ghosh & Mahbub Shah",
+              "14:20 — Substantive offence vs rule of evidence comparison",
+              "25:00 — Unlawful assembly liability thresholds under BNS 189–190",
+            ],
+          },
+          {
+            id: "cls-torts-1",
+            subject: "Law of Torts",
+            duration: "36 mins",
+            faculty: "Dr. Nandini Bose",
+            title: "Negligence, Duty of Care & Strict vs Absolute Liability",
+            excerpt: "From Donoghue v. Stevenson neighbour principle to M.C. Mehta non-delegable enterprise liability.",
+            sections: "Common Law Precedents · Public Liability Insurance Act",
+            outline: [
+              "00:00 — Neighbour principle and Caparo three-stage duty test",
+              "13:10 — Rylands v. Fletcher escape and non-natural use exceptions",
+              "24:45 — M.C. Mehta v. Union of India: elimination of exceptions in India",
+            ],
+          },
+          {
+            id: "cls-torts-2",
+            subject: "Law of Torts",
+            duration: "31 mins",
+            faculty: "Dr. Nandini Bose",
+            title: "Defamation, Nuisance & Vicarious Liability of the State",
+            excerpt: "Examines sovereign vs non-sovereign functions from Kasturi Lal to modern constitutional compensation.",
+            sections: "Art. 300 Constitution · Tortious Liability",
+            outline: [
+              "00:00 — Libel vs Slander and innuendo pleading requirements",
+              "12:00 — Qui facit per alium facit per se in master-servant relations",
+              "22:15 — Decline of sovereign immunity in Nilabati Behera",
+            ],
+          },
+          {
+            id: "cls-contract-1",
+            subject: "Contract Law",
+            duration: "44 mins",
+            faculty: "Prof. Vikramaditya Sen",
+            title: "Offer, Acceptance, Consideration & Privity under Sections 2–25 ICA",
+            excerpt: "Essential contract formation doctrines including postal rule, Carlill general offers, and exceptions to consideration.",
+            sections: "Secs. 2(a)–2(h), 10, 25 · Indian Contract Act 1872",
+            outline: [
+              "00:00 — Invitation to treat vs general offer (Carlill v. Carbolic Smoke Ball)",
+              "14:50 — Communication and revocation across instantaneous & postal modes",
+              "28:00 — Past consideration and Section 25 statutory exceptions",
+            ],
+          },
+          {
+            id: "cls-contract-2",
+            subject: "Contract Law",
+            duration: "39 mins",
+            faculty: "Prof. Vikramaditya Sen",
+            title: "Doctrine of Frustration (Section 56) & Liquidated Damages (Section 74)",
+            excerpt: "Analyzes Satyabrata Ghose commercial impossibility and Fateh Chand compensation limits.",
+            sections: "Secs. 56, 73, 74 · Indian Contract Act 1872",
+            outline: [
+              "00:00 — Supervening impossibility vs commercial hardship",
+              "15:20 — Force majeure clauses after Energy Watchdog (2017)",
+              "27:40 — Reasonable compensation ceiling under Sections 73 & 74",
+            ],
+          },
+          {
+            id: "cls-crpc-1",
+            subject: "Criminal Procedure",
+            duration: "48 mins",
+            faculty: "Adv. Ritu Deshmukh",
+            title: "FIR, Arrest Safeguards & Anticipatory Bail: CrPC Mapped to BNSS 2023",
+            excerpt: "Zero FIR, e-FIR registration under BNSS Section 173, Section 35 notice safeguards, and BNSS Section 482 bail.",
+            sections: "BNSS Secs. 35, 173, 482 · CrPC Secs. 41A, 154, 438",
+            outline: [
+              "00:00 — Mandatory FIR registration in cognizable cases (Lalita Kumari)",
+              "16:00 — BNSS Section 173 digital/Zero FIR procedure and timelines",
+              "29:30 — Arnesh Kumar & Satender Kumar Antil arrest guidelines",
+              "39:00 — Anticipatory bail factors under BNSS 482 & Sushila Aggarwal",
+            ],
+          },
+          {
+            id: "cls-drafting-1",
+            subject: "Drafting & Pleading",
+            duration: "40 mins",
+            faculty: "Adv. Kabir Mehta",
+            title: "Drafting Civil Plaints, Written Statements & Writ Petitions (Order VI–VIII CPC)",
+            excerpt: "Practical clause-by-clause drafting session covering material facts, verification, cause of action, and prayer.",
+            sections: "CPC Orders VI, VII, VIII · High Court Writ Rules",
+            outline: [
+              "00:00 — Golden rule of pleading: facts not law or evidence",
+              "13:45 — Cause of action, valuation, and court fee paragraphs",
+              "27:10 — Affidavit verification and interim stay prayer drafting",
+            ],
+          },
+        ];
+
+        const RESEARCH_KB = [
+          {
+            keywords: ["103", "302", "bns", "ipc", "murder", "culpable homicide", "299", "300"],
+            subject: "Criminal Law · IPC / BNS Comparison",
+            questionTitle: "BNS Section 103 vs IPC Section 302 — Punishment for Murder",
+            actSection:
+              "Bharatiya Nyaya Sanhita (BNS), 2023: Sections 100, 101 & 103 (corresponding to IPC, 1860 Sections 299, 300 & 302)",
+            judgments: [
+              "Virsa Singh v. State of Punjab (AIR 1958 SC 465) — Four-step objective test to establish Clause 3 of Murder (intention to cause bodily injury sufficient in the ordinary course of nature to cause death).",
+              "State of A.P. v. Rayavarapu Punnayya (1976) 4 SCC 382 — Clarified culpable homicide as the genus and murder as its aggravated species.",
+              "Bachan Singh v. State of Punjab (1980) 2 SCC 684 — Laid down the 'rarest of rare' doctrine for imposing capital punishment.",
+            ],
+            summary:
+              "Section 103(1) of the Bharatiya Nyaya Sanhita (BNS), 2023 retains the core punishment framework of erstwhile Section 302 IPC: death or imprisonment for life, and fine. Crucially, BNS introduces Section 103(2), creating a dedicated aggravated sub-section when a group of five or more persons acting in concert commits murder on grounds of race, caste, community, sex, place of birth, language, personal belief, or any similar ground—making each member punishable with death or life imprisonment and fine.",
+            takeaways: [
+              "Always cite Section 101 BNS (defining murder) alongside Section 103 BNS (punishment) in exams.",
+              "Highlight the newly inserted Section 103(2) BNS on mob/group lynching as a major legislative departure from IPC 302.",
+              "Apply the Virsa Singh objective injury test when solving criminal problem-based questions.",
+            ],
+          },
+          {
+            keywords: ["kesavananda", "basic structure", "368", "amendment", "golaknath", "minerva"],
+            subject: "Constitutional Law · Amendment Power",
+            questionTitle: "Basic Structure Doctrine — Kesavananda Bharati v. State of Kerala",
+            actSection:
+              "Constitution of India: Article 368 (Power of Parliament to amend the Constitution) read with Article 13 & Preamble",
+            judgments: [
+              "Kesavananda Bharati v. State of Kerala (1973) 4 SCC 225 — 13-judge bench held by 7:6 majority that Parliament cannot alter or destroy the 'basic structure' of the Constitution under Article 368.",
+              "Indira Nehru Gandhi v. Raj Narain (1975) — Struck down Article 329A(4) for violating free and fair elections and rule of law.",
+              "Minerva Mills Ltd. v. Union of India (1980) 3 SCC 625 — Held limited amending power itself is part of the basic structure; harmony between Fundamental Rights and DPSP is essential.",
+            ],
+            summary:
+              "Overruling Golaknath v. State of Punjab (1967), the Supreme Court affirmed that Parliament possesses wide power to amend any part of the Constitution including Fundamental Rights, provided the amendment does not abrogate the Constitution's foundational identity or 'Basic Structure'. Features recognized across subsequent rulings include supremacy of the Constitution, secularism, federalism, judicial review, separation of powers, and democracy.",
+            takeaways: [
+              "Distinguish 'amendment' (modification within identity) from 'abrogation' (destroying basic framework).",
+              "Note that the Ninth Schedule is also subject to Basic Structure review post I.R. Coelho (2007) for laws inserted after 24 April 1973.",
+              "Quote Chief Justice S.M. Sikri and Justice H.R. Khanna's concurring reasoning for full marks.",
+            ],
+          },
+          {
+            keywords: ["contract", "section 10", "ica", "consideration", "offer", "acceptance", "carlill", "privity"],
+            subject: "Contract Law · Formation & Validity",
+            questionTitle: "Essentials of a Valid Contract under Section 10, Indian Contract Act 1872",
+            actSection:
+              "Indian Contract Act, 1872: Section 2(h), Section 10 (What agreements are contracts), Sections 11–30",
+            judgments: [
+              "Balfour v. Balfour (1919) 2 KB 571 — Domestic agreements without intention to create legal relations are not enforceable contracts.",
+              "Carlill v. Carbolic Smoke Ball Co. (1893) 1 QB 256 — General offer made to the world at large matures into a binding contract upon performance of conditions.",
+              "Mohori Bibee v. Dharmodas Ghose (1903) ILR 30 Cal 539 — An agreement with a minor is void ab initio (void from the very beginning), not merely voidable.",
+            ],
+            summary:
+              "Under Section 2(h) read with Section 10 of the Indian Contract Act, 1872, an agreement becomes an enforceable contract only when made by the free consent (Sec. 14) of parties competent to contract (Sec. 11–12), for a lawful consideration (Sec. 2(d), Sec. 23) and with a lawful object, and not expressly declared void under Sections 24–30. Additionally, Indian courts require an intention to create legal obligations.",
+            takeaways: [
+              "Verify all five statutory pillars under Section 10 before evaluating any problem question.",
+              "Remember exceptions to 'no consideration, no contract' under Section 25 (natural love & affection, past voluntary service, time-barred debt).",
+              "Under Indian law, consideration may move from a third party (Chinnaya v. Ramayya), unlike strict English rule.",
+            ],
+          },
+          {
+            keywords: ["tort", "strict liability", "absolute liability", "rylands", "mehta", "negligence", "donoghue"],
+            subject: "Law of Torts · No-Fault Liability",
+            questionTitle: "Strict Liability (Rylands v. Fletcher) vs Absolute Liability (M.C. Mehta)",
+            actSection:
+              "Common Law Tort Principles · Public Liability Insurance Act, 1991 · Environment Protection Act, 1986",
+            judgments: [
+              "Rylands v. Fletcher (1868) LR 3 HL 330 — Person bringing onto land anything likely to do mischief if it escapes is prima facie answerable for natural consequences.",
+              "M.C. Mehta v. Union of India (AIR 1987 SC 1086 — Oleum Gas Leak Case) — Supreme Court formulated Absolute Liability for hazardous/inherently dangerous industries with zero exceptions.",
+              "Indian Council for Enviro-Legal Action v. Union of India (1996) — Reaffirmed 'Polluter Pays' principle alongside absolute enterprise liability.",
+            ],
+            summary:
+              "Strict liability requires (1) bringing a dangerous thing onto land, (2) non-natural use of land, and (3) actual escape causing foreseeable damage, while admitting five defences (Act of God, plaintiff's own default, consent, statutory authority, third-party act). In M.C. Mehta (1987), Chief Justice P.N. Bhagwati rejected these exceptions for hazardous enterprises in India, holding that liability is absolute, non-delegable, and compensation scales with the enterprise's financial capacity.",
+            takeaways: [
+              "Strict liability permits 5 defences; Absolute liability permits NO defences or exceptions.",
+              "Absolute liability applies even if the hazardous substance did not 'escape' the premises or injured workers inside.",
+              "Damages under M.C. Mehta are exemplary and correlated to the magnitude and capacity of the enterprise.",
+            ],
+          },
+          {
+            keywords: ["bail", "anticipatory", "482", "438", "bnss", "crpc", "arnesh", "arrest", "fir", "173"],
+            subject: "Criminal Procedure · CrPC / BNSS",
+            questionTitle: "Anticipatory Bail & Arrest Safeguards under BNSS Section 482",
+            actSection:
+              "Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023: Section 482 (replacing CrPC Section 438) & Section 35 (replacing CrPC Section 41/41A)",
+            judgments: [
+              "Gurbaksh Singh Sibbia v. State of Punjab (1980) 2 SCC 565 — Anticipatory bail is rooted in Article 21 personal liberty; courts should not impose inflexible limits not found in the statute.",
+              "Sushila Aggarwal v. State (NCT of Delhi) (2020) 5 SCC 1 — Five-judge bench held anticipatory bail need not ordinarily be limited to a fixed duration until filing of chargesheet.",
+              "Arnesh Kumar v. State of Bihar (2014) 8 SCC 273 — Police cannot make automatic arrests for offences punishable up to 7 years without recording reasons and serving notice.",
+            ],
+            summary:
+              "Section 482 of the BNSS, 2023 empowers the High Court or Court of Session to direct release on bail in the event of arrest when an applicant has reason to believe they may be arrested on accusation of a non-bailable offence. Notably, BNSS removes the state-level/proviso ambiguities around interim hearings while retaining exclusions for specified aggravated offences (such as gang rape of minors under BNS Sections 65/70(2)).",
+            takeaways: [
+              "Only the Court of Session or High Court can grant pre-arrest bail under BNSS Section 482 (not a Magistrate).",
+              "Cite Sushila Aggarwal (2020) on why anticipatory bail continues through trial unless cancelled.",
+              "Cross-reference BNSS Section 35(3) notice compliance for offences punishable up to 7 years.",
+            ],
+          },
+          {
+            keywords: ["maneka", "article 21", "privacy", "puttaswamy", "due process", "liberty"],
+            subject: "Constitutional Law · Fundamental Rights",
+            questionTitle: "Article 21 — Due Process & Right to Privacy Evolution",
+            actSection:
+              "Constitution of India: Article 21 (Protection of life and personal liberty) read with Articles 14 & 19",
+            judgments: [
+              "Maneka Gandhi v. Union of India (1978) 1 SCC 248 — Procedure under Article 21 must be 'fair, just, and reasonable', not arbitrary or fanciful (incorporating substantive due process).",
+              "Justice K.S. Puttaswamy (Retd.) v. Union of India (2017) 10 SCC 1 — Unanimous 9-judge bench declared Right to Privacy an intrinsic part of Article 21.",
+              "Navtej Singh Johar v. Union of India (2018) — Applied privacy, dignity, and constitutional morality to read down Section 377 IPC.",
+            ],
+            summary:
+              "Before 1978, A.K. Gopalan treated Articles 14, 19, and 21 as mutually exclusive silos. Maneka Gandhi established the 'Golden Triangle' test: any law depriving personal liberty must simultaneously satisfy Article 14 (non-arbitrariness), Article 19 (reasonableness), and Article 21 (fair procedure). Puttaswamy later articulated a three-fold test for privacy restrictions: legality (existence of a law), legitimate state aim, and proportionality.",
+            takeaways: [
+              "Always test Article 21 restrictions against the 3-prong Puttaswamy proportionality standard.",
+              "Contrast A.K. Gopalan's narrow 'procedure established by law' with Maneka Gandhi's substantive fairness.",
+              "Include dignity and livelihood (Olga Tellis) as facets of 'life' under Article 21.",
+            ],
+          },
+        ];
+
+        const NOTES_LIBRARY = {
+          "bare-acts": [
+            {
+              id: "ba-1",
+              title: "Constitution of India — Part III (Fundamental Rights Digest)",
+              citation: "Articles 12 to 35 · Updated 2026 Syllabus",
+              summary: "Annotated text and quick-reference chart of Equality (14–18), Freedoms (19–22), Exploitation (23–24), Religion (25–28), and Constitutional Remedies (32).",
+              body:
+                "PART III — FUNDAMENTAL RIGHTS (SUMMARY DIGEST)\n\n" +
+                "• Article 12: Defines 'The State' including Government & Parliament of India, State Legislatures, local authorities, and 'other authorities' (instrumentality test: R.D. Shetty & Ajay Hasia).\n" +
+                "• Article 13: Laws inconsistent with or in derogation of Fundamental Rights are void. Includes Doctrine of Eclipse (Bhikaji Narain), Severability (R.M.D.C.), and Judicial Review.\n" +
+                "• Article 14: Equality before law (English negative concept) and Equal protection of laws (American positive concept). Permits reasonable classification (intelligible differentia + rational nexus) and strikes down manifest arbitrariness (Shayara Bano).\n" +
+                "• Article 19(1)(a)–(g): Six freedoms available exclusively to citizens, subject to reasonable restrictions under 19(2)–(6).\n" +
+                "• Article 21: Protection of life and personal liberty—procedure must be fair, just, and reasonable (Maneka Gandhi).\n" +
+                "• Article 32: Right to move Supreme Court for enforcement of Fundamental Rights via Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo Warranto.",
+            },
+            {
+              id: "ba-2",
+              title: "Bharatiya Nyaya Sanhita (BNS), 2023 — Key Offences & IPC Mapping",
+              citation: "Act No. 45 of 2023 · In force from 1 July 2024",
+              summary: "Concise mapping table from IPC 1860 to BNS 2023 covering General Exceptions, Punishments, Community Service, and Offences Against Body.",
+              body:
+                "BHARATIYA NYAYA SANHITA (BNS), 2023 — EXAM MAPPING GUIDE\n\n" +
+                "1. Section 3(5) BNS (replaces Section 34 IPC): Acts done by several persons in furtherance of common intention.\n" +
+                "2. Section 4 BNS: Introduces 'Community Service' as a formal punishment for petty offences (e.g., defamation, petty theft under ₹5,000, misconduct in public while intoxicated).\n" +
+                "3. Section 61 BNS (replaces Section 120A/120B IPC): Criminal Conspiracy.\n" +
+                "4. Section 69 BNS (New Provision): Sexual intercourse by employing deceitful means (false promise of marriage without intention to fulfil) — punishable up to 10 years.\n" +
+                "5. Sections 100–103 BNS (replaces Sections 299–302 IPC): Culpable homicide, Murder, and aggravated group/mob murder under Section 103(2).\n" +
+                "6. Section 111 BNS (New Provision): Organised Crime; Section 113 BNS: Terrorist Act.\n" +
+                "7. Section 152 BNS (replaces Section 124A framework): Acts endangering sovereignty, unity, and integrity of India.",
+            },
+            {
+              id: "ba-3",
+              title: "Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023 — Procedure Highlights",
+              citation: "Act No. 46 of 2023 · Replaces CrPC 1973",
+              summary: "Essential provisions on Zero FIR, e-FIR, mandatory forensic videography, police custody timelines, and bail.",
+              body:
+                "BHARATIYA NAGARIK SURAKSHA SANHITA (BNSS), 2023 — KEY SECTIONS\n\n" +
+                "• Section 35 BNSS (replaces Sec. 41/41A CrPC): Arrest without warrant safeguards and mandatory written notice for offences punishable up to 7 years.\n" +
+                "• Section 105 BNSS: Mandatory audio-video recording of search and seizure operations.\n" +
+                "• Section 173 BNSS (replaces Sec. 154 CrPC): Institutionalizes Zero FIR regardless of jurisdiction and e-FIR (signature within 3 days). Preliminary inquiry permitted (within 14 days) for offences punishable 3 to 7 years.\n" +
+                "• Section 176(3) BNSS: Mandatory forensic expert visit to crime scenes for offences punishable with 7 years or more.\n" +
+                "• Section 187 BNSS (replaces Sec. 167 CrPC): Police custody up to 15 days may be authorized in parts during initial 40 or 60 days of 60/90-day detention period.\n" +
+                "• Section 482 BNSS (replaces Sec. 438 CrPC): Anticipatory Bail by High Court or Session Court.",
+            },
+            {
+              id: "ba-4",
+              title: "Indian Contract Act, 1872 — Core Statutory Provisions (Secs. 1–75)",
+              citation: "Act No. 9 of 1872 · General Principles",
+              summary: "Complete statutory checklist covering Agreement, Void Agreements, Contingent Contracts, Quasi-Contracts, and Damages.",
+              body:
+                "INDIAN CONTRACT ACT, 1872 — GENERAL PRINCIPLES\n\n" +
+                "• Section 2(a)–(h): Proposal, Promise, Consideration, Agreement, Void Agreement, and Contract.\n" +
+                "• Section 10: Essential elements—Free consent, competent parties, lawful consideration, lawful object.\n" +
+                "• Sections 15–18: Coercion, Undue Influence, Fraud, and Misrepresentation (rendering contract voidable under Sec. 19/19A).\n" +
+                "• Sections 26–30: Expressly void agreements—restraint of marriage, restraint of trade (with partnership/goodwill exceptions), restraint of legal proceedings, wagering.\n" +
+                "• Section 56: Agreement to do impossible act & supervening frustration.\n" +
+                "• Sections 68–72: Quasi-contracts based on unjust enrichment (necessaries to minor, payment by interested person, non-gratuitous act, finder of goods, payment by mistake).\n" +
+                "• Sections 73–74: Compensation for breach—ordinary vs special damages (Hadley v. Baxendale) and liquidated damages ceiling.",
+            },
+          ],
+          judgments: [
+            {
+              id: "jg-1",
+              title: "Kesavananda Bharati v. State of Kerala (1973)",
+              citation: "(1973) 4 SCC 225 · 13-Judge Constitutional Bench",
+              summary: "Established the Basic Structure Doctrine limiting Parliament's constituent amending power under Article 368.",
+              body:
+                "CASE BRIEF: KESAVANANDA BHARATI v. STATE OF KERALA (1973)\n\n" +
+                "Bench: 13 Judges (7:6 Majority)\n" +
+                "Issues: (1) Whether Parliament's power to amend under Article 368 is unlimited; (2) Validity of 24th, 25th, and 29th Constitutional Amendments.\n\n" +
+                "Held:\n" +
+                "• Golaknath v. State of Punjab was overruled; 'law' under Article 13(2) does not include a constitutional amendment under Article 368.\n" +
+                "• However, the word 'amend' does not empower Parliament to alter the Basic Structure or essential features of the Constitution.\n" +
+                "• Preamble is an integral part of the Constitution and reflects its core foundational values.\n\n" +
+                "Ratio Decidendi: Amending power is constituent yet limited; Parliament cannot rewrite or destroy the Constitution's fundamental identity.",
+            },
+            {
+              id: "jg-2",
+              title: "Maneka Gandhi v. Union of India (1978)",
+              citation: "(1978) 1 SCC 248 · 7-Judge Bench",
+              summary: "Transformed Article 21 by reading Articles 14, 19, and 21 together as the Golden Triangle.",
+              body:
+                "CASE BRIEF: MANEKA GANDHI v. UNION OF INDIA (1978)\n\n" +
+                "Facts: Petitioner's passport was impounded by the Government under Section 10(3)(c) of the Passports Act, 1967 'in public interest' without giving prior hearing or reasons.\n\n" +
+                "Issues: Scope of 'personal liberty' under Article 21 and whether Fundamental Rights under Articles 14, 19, and 21 are mutually exclusive.\n\n" +
+                "Held:\n" +
+                "• Overruled A.K. Gopalan's silo theory: a law affecting personal liberty must satisfy the test of Articles 14, 19, and 21 collectively.\n" +
+                "• 'Procedure established by law' cannot be arbitrary, unfair, or oppressive—it must conform to natural justice (audi alteram partem).\n" +
+                "• Post-decisional hearing may cure urgency defects in passport impounding orders.",
+            },
+            {
+              id: "jg-3",
+              title: "Donoghue v. Stevenson (1932) & Rylands v. Fletcher (1868)",
+              citation: "[1932] AC 562 (HL) & (1868) LR 3 HL 330",
+              summary: "Foundational tort judgments establishing the Neighbour Principle in Negligence and Strict Liability.",
+              body:
+                "TORT LANDMARKS: NEGLIGENCE & STRICT LIABILITY\n\n" +
+                "1. Donoghue v. Stevenson (1932):\n" +
+                "Lord Atkin formulated the Neighbour Principle: 'You must take reasonable care to avoid acts or omissions which you can reasonably foresee would be likely to injure your neighbour.' Established manufacturer's direct duty of care to ultimate consumers even without contractual privity.\n\n" +
+                "2. Rylands v. Fletcher (1868):\n" +
+                "Blackburn J. held that a person who for his own purposes brings on his land and collects and keeps there anything likely to do mischief if it escapes, must keep it in at his peril, and is prima facie answerable for all the damage which is the natural consequence of its escape.",
+            },
+            {
+              id: "jg-4",
+              title: "Justice K.S. Puttaswamy (Retd.) v. Union of India (2017)",
+              citation: "(2017) 10 SCC 1 · 9-Judge Unanimous Bench",
+              summary: "Recognized Privacy as a fundamental right intrinsic to life and personal liberty under Article 21.",
+              body:
+                "CASE BRIEF: K.S. PUTTASWAMY v. UNION OF INDIA (2017)\n\n" +
+                "Held (Unanimous 9:0):\n" +
+                "• Overruled M.P. Sharma (1954) and Kharak Singh (1962) to the extent they held privacy is not a fundamental right.\n" +
+                "• Right to Privacy encompasses bodily autonomy, informational privacy, and decisional autonomy.\n" +
+                "• Three-part Proportionality Test for state intrusion: (1) Legality (backed by valid law); (2) Need (legitimate state aim); (3) Proportionality (least restrictive means balanced against right infringed).",
+            },
+          ],
+          revision: [
+            {
+              id: "rev-1",
+              title: "Constitutional Law — Rapid 1-Page Semester Revision Sheet",
+              citation: "LL.B. Sem II / Judiciary Prelims & Mains",
+              summary: "High-yield doctrinary summary: Preamble, Schedules, Writ Differences, Emergency Provisions (352/356/360), and Anti-Defection.",
+              body:
+                "CONSTITUTIONAL LAW — RAPID REVISION SHEET\n\n" +
+                "1. Doctrines under Part III: Eclipse (pre-constitutional laws — Bhikaji Narain), Severability (R.M.D.C.), Waiver (cannot waive FRs — Basheshar Nath).\n" +
+                "2. Article 32 vs 226: Art. 32 is itself a Fundamental Right (only for FRs); Art. 226 is a constitutional right available for BOTH FRs and 'any other purpose' (legal rights).\n" +
+                "3. Emergency Matrix: Art. 352 (National — Armed Rebellion replaced Internal Disturbance via 44th Amendment), Art. 356 (State — S.R. Bommai judicial review), Art. 360 (Financial).\n" +
+                "4. Art. 358 vs 359: Under 358, Art. 19 automatically suspends during external aggression/war emergency; under 359, President suspends enforcement of specified FRs EXCEPT Articles 20 and 21 (44th Amendment safeguard).",
+            },
+            {
+              id: "rev-2",
+              title: "Criminal Law Exam Matrix — BNS 2023 vs IPC 1860 Quick Comparison",
+              citation: "Updated Criminal Major Acts · Semester & Judiciary",
+              summary: "Side-by-side table of changed section numbers for Murder, Hurt, Theft, Cheating, Defamation, and General Exceptions.",
+              body:
+                "CRIMINAL LAW FAST-TRACK SECTION MAP (IPC -> BNS)\n\n" +
+                "• Common Intention: IPC 34 -> BNS 3(5)\n" +
+                "• Private Defence: IPC 96–106 -> BNS 34–44\n" +
+                "• Abetment: IPC 107 -> BNS 45\n" +
+                "• Criminal Conspiracy: IPC 120A/B -> BNS 61\n" +
+                "• Culpable Homicide: IPC 299 -> BNS 100\n" +
+                "• Murder & Punishment: IPC 300/302 -> BNS 101/103\n" +
+                "• Dowry Death: IPC 304B -> BNS 80\n" +
+                "• Cruelty by Husband/Relatives: IPC 498A -> BNS 85\n" +
+                "• Theft: IPC 378 -> BNS 303\n" +
+                "• Cheating: IPC 415 -> BNS 318\n" +
+                "• Defamation: IPC 499 -> BNS 356",
+            },
+            {
+              id: "rev-3",
+              title: "Indian Evidence Act to Bharatiya Sakshya Adhiniyam (BSA) 2023 Guide",
+              citation: "Act No. 47 of 2023 · Electronic Evidence & Admissions",
+              summary: "Covers Section 63 BSA (replacing Sec. 65B IEA) electronic record admissibility, dying declarations, and confessions.",
+              body:
+                "BHARATIYA SAKSHYA ADHINIYAM (BSA), 2023 — REVISION BRIEF\n\n" +
+                "• Section 2(1)(e) BSA: Expands 'Document' to explicitly include electronic and digital records (emails, server logs, smartphone files, cloud records).\n" +
+                "• Section 57 BSA: Primary evidence now recognizes electronic records stored simultaneously in multiple files or retrieved from proper custody.\n" +
+                "• Section 63 BSA (replaces Sec. 65B IEA): Admissibility of electronic records requires statutory certificate with hash value verification (Arjun Panditrao Khotkar compliance).\n" +
+                "• Section 26 BSA (replaces Sec. 32 IEA): Dying Declaration — Pakala Narayana Swami & Khushal Rao reliability principles remain fully applicable.",
+            },
+          ],
+          memorials: [
+            {
+              id: "moot-1",
+              title: "Sample Petitioner Memorial — Constitutional Challenge (Art. 14 & Art. 21)",
+              citation: "National Moot Court Format · Writ Petition (Civil) under Art. 32",
+              summary: "Complete template featuring Cover Page structure, Statement of Jurisdiction, Issues Raised, Summary of Arguments, and Prayer.",
+              body:
+                "IN THE HON'BLE SUPREME COURT OF INDIA\n" +
+                "WRIT PETITION (CIVIL) NO. ___ OF 2026\n" +
+                "(UNDER ARTICLE 32 OF THE CONSTITUTION OF INDIA)\n\n" +
+                "MEMORIAL FOR THE PETITIONER\n\n" +
+                "I. STATEMENT OF JURISDICTION\n" +
+                "The Petitioner has approached this Hon'ble Court under Article 32 of the Constitution of India for enforcement of Fundamental Rights guaranteed under Part III.\n\n" +
+                "II. ISSUES RAISED\n" +
+                "1. Whether the present Writ Petition is maintainable under Article 32?\n" +
+                "2. Whether the impugned Digital Surveillance Directive violates the Right to Privacy under Article 21 read with Puttaswamy?\n" +
+                "3. Whether the classification created under Section 4 of the impugned Act is manifestly arbitrary under Article 14?\n\n" +
+                "III. SUMMARY OF ARGUMENTS\n" +
+                "[1] Maintainability: Exhaustion of alternative remedies is a rule of discretion, not a bar where vires of a central legislation violating Fundamental Rights is challenged.\n" +
+                "[2] Proportionality Failure: The State fails the four-prong Puttaswamy proportionality test as less intrusive anonymization measures exist.\n\n" +
+                "IV. PRAYER\n" +
+                "Wherefore, in light of the issues raised, arguments advanced, and authorities cited, the Petitioner humbly prays that this Hon'ble Court may be pleased to declare Section 4 unconstitutional and issue a writ of Mandamus.",
+            },
+            {
+              id: "moot-2",
+              title: "Sample Respondent Memorial — Commercial Arbitration & Contract Frustration",
+              citation: "Commercial Law Moot Format · Section 56 & Section 74 ICA",
+              summary: "Model Respondent written submission defending force majeure thresholds and liquidated damages enforcement.",
+              body:
+                "BEFORE THE ARBITRAL TRIBUNAL\n" +
+                "ARBITRATION CASE NO. ___ OF 2026\n\n" +
+                "MEMORIAL FOR THE RESPONDENT\n\n" +
+                "I. ISSUES FOR DETERMINATION\n" +
+                "1. Whether supply-chain price escalation frustrates the Supply Agreement under Section 56 of the Indian Contract Act, 1872?\n" +
+                "2. Whether the Respondent is entitled to retain the pre-estimated liquidated damages under Section 74?\n\n" +
+                "II. ARGUMENTS ADVANCED\n" +
+                "• Mere Commercial Hardship Is Not Frustration: Relying on Satyabrata Ghose v. Mugneeram Bangur and Energy Watchdog v. CERC (2017), an onerous rise in procurement cost does not destroy the foundation of the contract.\n" +
+                "• Genuine Pre-Estimate under Sec. 74: Where loss is difficult to prove precisely in infrastructure contracts, ONGC v. Saw Pipes permits recovery of reasonable pre-estimated damages.\n\n" +
+                "III. PRAYER\n" +
+                "Dismiss the Claimant's plea of frustration and award liquidated damages with interest under Section 31(7) of the Arbitration and Conciliation Act, 1996.",
+            },
+          ],
+        };
+
+        // -------------------------------------------------------------------
+        // 2. Application State
+        // -------------------------------------------------------------------
+        const state = {
+          activeTab: "research",
+          credits: 5,
+          maxCredits: 5,
+          isPro: false,
+          activePlanId: "free",
+          activePlanName: "Free Student Starter",
+          selectedClassSubject: "All Subjects",
+          selectedNotesTab: "bare-acts",
+          notesSearchQuery: "",
+          completedClasses: new Set(),
+          researchHistory: [],
+          activeHistoryIndex: 0,
+          selectedUpgradePlan: "monthly",
+          checkoutPlanId: "monthly",
+          selectedPayMethod: "UPI",
+          activeLectureId: null,
+          lecturePlaying: false,
+          lectureProgress: 18,
+          lectureTimer: null,
+          activeReaderText: "",
+        };
+
+        // -------------------------------------------------------------------
+        // 3. DOM References
+        // -------------------------------------------------------------------
+        const dom = {
+          navLinks: document.querySelectorAll("[data-nav]"),
+          mobileMenuBtn: document.getElementById("mobileMenuBtn"),
+          mobileDrawer: document.getElementById("mobileDrawer"),
+          tabButtons: document.querySelectorAll("[data-tab]"),
+          tabPanels: {
+            research: document.getElementById("panel-research"),
+            classes: document.getElementById("panel-classes"),
+            notes: document.getElementById("panel-notes"),
+            pricing: document.getElementById("panel-pricing"),
+          },
+          creditTrackerPill: document.getElementById("creditTrackerPill"),
+          creditTrackerText: document.getElementById("creditTrackerText"),
+          activePlanBadge: document.getElementById("activePlanBadge"),
+          workspaceCreditsLabel: document.getElementById("workspaceCreditsLabel"),
+          composerCreditCounter: document.getElementById("composerCreditCounter"),
+          aiResearchForm: document.getElementById("aiResearchForm"),
+          researchQueryInput: document.getElementById("researchQueryInput"),
+          askAiBtn: document.getElementById("askAiBtn"),
+          sampleButtons: document.querySelectorAll(".sample-btn"),
+          paywallInlineBanner: document.getElementById("paywallInlineBanner"),
+          inlineUpgradeBtn: document.getElementById("inlineUpgradeBtn"),
+          aiResponseBox: document.getElementById("aiResponseBox"),
+          researchHistoryList: document.getElementById("researchHistoryList"),
+          classSubjectFilters: document.getElementById("classSubjectFilters"),
+          classesGrid: document.getElementById("classesGrid"),
+          notesSubTabs: document.querySelectorAll("[data-notes-tab]"),
+          librarySearchInput: document.getElementById("librarySearchInput"),
+          notesGrid: document.getElementById("notesGrid"),
+          pricingGrid: document.getElementById("pricingGrid"),
+          contactSupportForm: document.getElementById("contactSupportForm"),
+          contactFormFeedback: document.getElementById("contactFormFeedback"),
+          // Modals
+          upgradeModalBackdrop: document.getElementById("upgradeModalBackdrop"),
+          upgradeChoiceButtons: document.querySelectorAll("[data-upgrade-plan]"),
+          proceedToCheckoutBtn: document.getElementById("proceedToCheckoutBtn"),
+          paymentModalBackdrop: document.getElementById("paymentModalBackdrop"),
+          checkoutPlanName: document.getElementById("checkoutPlanName"),
+          checkoutPlanPrice: document.getElementById("checkoutPlanPrice"),
+          paymentMethodsGroup: document.querySelectorAll("[data-pay-method]"),
+          paymentConfirmForm: document.getElementById("paymentConfirmForm"),
+          paymentFormFeedback: document.getElementById("paymentFormFeedback"),
+          classModalBackdrop: document.getElementById("classModalBackdrop"),
+          classModalKicker: document.getElementById("classModalKicker"),
+          classModalTitle: document.getElementById("classModalTitle"),
+          lectureFacultyLabel: document.getElementById("lectureFacultyLabel"),
+          lecturePlaybackStatus: document.getElementById("lecturePlaybackStatus"),
+          lectureActiveChapter: document.getElementById("lectureActiveChapter"),
+          lecturePlayToggle: document.getElementById("lecturePlayToggle"),
+          lectureProgressFill: document.getElementById("lectureProgressFill"),
+          classModalOutline: document.getElementById("classModalOutline"),
+          classModalSections: document.getElementById("classModalSections"),
+          toggleCompleteClassBtn: document.getElementById("toggleCompleteClassBtn"),
+          readerModalBackdrop: document.getElementById("readerModalBackdrop"),
+          readerModalKicker: document.getElementById("readerModalKicker"),
+          readerModalTitle: document.getElementById("readerModalTitle"),
+          readerModalCitation: document.getElementById("readerModalCitation"),
+          readerModalBody: document.getElementById("readerModalBody"),
+          copyReaderTextBtn: document.getElementById("copyReaderTextBtn"),
+        };
+
+        // -------------------------------------------------------------------
+        // 4. Helper Utilities
+        // -------------------------------------------------------------------
+        function escapeHtml(text) {
+          const div = document.createElement("div");
+          div.textContent = text;
+          return div.innerHTML;
+        }
+
+        function openModal(backdropEl) {
+          backdropEl.classList.add("is-open");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeModal(backdropEl) {
+          backdropEl.classList.remove("is-open");
+          if (backdropEl === dom.classModalBackdrop) {
+            stopLecturePlayback();
+          }
+          const anyOpen = document.querySelector(".modal-backdrop.is-open");
+          if (!anyOpen) {
+            document.body.style.overflow = "";
+          }
+        }
+
+        function switchTab(tabName) {
+          if (!dom.tabPanels[tabName]) return;
+          state.activeTab = tabName;
+
+          dom.tabButtons.forEach((btn) => {
+            const active = btn.dataset.tab === tabName;
+            btn.classList.toggle("is-active", active);
+            btn.setAttribute("aria-selected", active ? "true" : "false");
+          });
+
+          Object.entries(dom.tabPanels).forEach(([key, panel]) => {
+            panel.classList.toggle("is-active", key === tabName);
+          });
+
+          dom.navLinks.forEach((link) => {
+            const target = link.dataset.nav;
+            link.classList.toggle("is-active", target === tabName);
+          });
+        }
+
+        // -------------------------------------------------------------------
+        // 5. Credit & Subscription State Rendering
+        // -------------------------------------------------------------------
+        function updateCreditAndPlanUI() {
+          if (state.isPro) {
+            dom.creditTrackerPill.classList.remove("is-exhausted");
+            dom.creditTrackerPill.classList.add("is-pro");
+            dom.creditTrackerText.innerHTML = `${escapeHtml(state.activePlanName)} &middot; <span class="credit-count">Unlimited</span>`;
+            dom.activePlanBadge.textContent = state.activePlanName;
+            dom.workspaceCreditsLabel.textContent = "Unlimited AI Research Active";
+            dom.composerCreditCounter.textContent = "Credits remaining: Unlimited";
+            dom.researchQueryInput.disabled = false;
+            dom.askAiBtn.disabled = false;
+            dom.sampleButtons.forEach((btn) => {
+              btn.disabled = false;
+            });
+            dom.paywallInlineBanner.classList.remove("is-visible");
+          } else {
+            const left = Math.max(0, state.credits);
+            dom.creditTrackerPill.classList.remove("is-pro");
+            dom.creditTrackerPill.classList.toggle("is-exhausted", left === 0);
+            dom.creditTrackerText.innerHTML = `Free AI Questions Left: <span class="credit-count">${left} / ${state.maxCredits}</span>`;
+            dom.activePlanBadge.textContent = state.activePlanName;
+            dom.workspaceCreditsLabel.textContent =
+              left === 0
+                ? "0 Free Queries Left (Upgrade Required)"
+                : `${left} Free ${left === 1 ? "Query" : "Queries"} Remaining`;
+            dom.composerCreditCounter.textContent = `Credits remaining: ${left} / ${state.maxCredits}`;
+
+            const locked = left <= 0;
+            dom.researchQueryInput.disabled = locked;
+            dom.askAiBtn.disabled = locked;
+            dom.sampleButtons.forEach((btn) => {
+              btn.disabled = locked;
+            });
+            dom.paywallInlineBanner.classList.toggle("is-visible", locked);
+          }
+
+          renderPricing();
+        }
+
+        // -------------------------------------------------------------------
+        // 6. AI Research Engine Logic
+        // -------------------------------------------------------------------
+        function synthesizeLegalBrief(query) {
+          const normalized = query.toLowerCase();
+
+          // Match best KB entry by keyword hits
+          let bestMatch = null;
+          let bestScore = 0;
+
+          for (const entry of RESEARCH_KB) {
+            let score = 0;
+            for (const kw of entry.keywords) {
+              if (normalized.includes(kw)) {
+                score += kw.length > 4 ? 2 : 1;
+              }
+            }
+            if (score > bestScore) {
+              bestScore = score;
+              bestMatch = entry;
+            }
+          }
+
+          if (bestMatch && bestScore > 0) {
+            return {
+              query,
+              subject: bestMatch.subject,
+              title: bestMatch.questionTitle,
+              actSection: bestMatch.actSection,
+              judgments: bestMatch.judgments,
+              summary: bestMatch.summary,
+              takeaways: bestMatch.takeaways,
+            };
+          }
+
+          // Intelligent structured academic fallback for any custom student query
+          return {
+            query,
+            subject: "Indian Legal Research · Statutory & Case Brief",
+            title: query,
+            actSection:
+              "Constitution of India (Arts. 14, 19, 21, 32, 226) · Bharatiya Nyaya Sanhita (BNS), 2023 · Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023 · Indian Contract Act, 1872",
+            judgments: [
+              "Kesavananda Bharati v. State of Kerala (1973) 4 SCC 225 — Constitutional supremacy and judicial review form the foundation of statutory interpretation.",
+              "Maneka Gandhi v. Union of India (1978) 1 SCC 248 — Statutory discretion and procedures impacting rights must satisfy fairness, non-arbitrariness, and proportionality.",
+              "State of West Bengal v. Anwar Ali Sarkar (AIR 1952 SC 75) — Legislative classification must rest on intelligible differentia with rational nexus to statutory object.",
+            ],
+            summary:
+              `For your query ("${query}"), apply the IRAC legal methodology (Issue, Rule, Application, Conclusion). First identify the governing parent statute and check whether the transaction or offence falls under newly enacted 2023 criminal codes (BNS / BNSS / BSA) or civil/constitutional provisions. Next, read the statutory text harmoniously with binding Supreme Court precedent to resolve ambiguity in mens rea, procedural compliance, or remedies.`,
+            takeaways: [
+              "Begin exam and moot answers by stating the exact statutory section and legislative intent.",
+              "Distinguish ratio decidendi (binding rule) from obiter dicta in cited judgments.",
+              "Cross-check transitional savings clauses when comparing pre-2024 IPC/CrPC/IEA provisions with BNS/BNSS/BSA.",
+            ],
+          };
+        }
+
+        function renderAIResponse(brief) {
+          if (!brief) return;
+
+          const judgmentsHtml = brief.judgments
+            .map((j) => `<li>${escapeHtml(j)}</li>`)
+            .join("");
+          const takeawaysHtml = brief.takeaways
+            .map((t) => `<li>${escapeHtml(t)}</li>`)
+            .join("");
+
+          dom.aiResponseBox.innerHTML = `
+            <div class="response-meta-line">
+              <span class="response-kicker">${escapeHtml(brief.subject)}</span>
+              <button type="button" id="copyBriefBtn" class="btn btn-outline-dark" style="min-height: 34px; padding: 5px 12px; font-size: 12.5px;">
+                Copy Case Brief
+              </button>
+            </div>
+            <h3 class="response-question-title">${escapeHtml(brief.title)}</h3>
+            <div class="brief-sections">
+              <div class="brief-block">
+                <h4 class="brief-block-title">Relevant Act / Section</h4>
+                <p class="brief-statute-code">${escapeHtml(brief.actSection)}</p>
+              </div>
+              <div class="brief-block">
+                <h4 class="brief-block-title">Landmark Judgments</h4>
+                <ul class="brief-judgments-list">${judgmentsHtml}</ul>
+              </div>
+              <div class="brief-block">
+                <h4 class="brief-block-title">Structured Summary</h4>
+                <p class="brief-summary-text">${escapeHtml(brief.summary)}</p>
+              </div>
+              <div class="brief-block">
+                <h4 class="brief-block-title">Key Takeaways for Exams &amp; Moot Court</h4>
+                <ul class="brief-takeaways-list">${takeawaysHtml}</ul>
+              </div>
+            </div>
+          `;
+
+          const copyBtn = document.getElementById("copyBriefBtn");
+          if (copyBtn) {
+            copyBtn.addEventListener("click", () => {
+              const plain = [
+                brief.title,
+                `Subject: ${brief.subject}`,
+                `Relevant Act / Section: ${brief.actSection}`,
+                `Landmark Judgments:\n- ${brief.judgments.join("\n- ")}`,
+                `Summary:\n${brief.summary}`,
+                `Key Takeaways:\n- ${brief.takeaways.join("\n- ")}`,
+              ].join("\n\n");
+
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(plain).catch(() => {});
+              }
+              copyBtn.textContent = "Brief Copied";
+              setTimeout(() => {
+                copyBtn.textContent = "Copy Case Brief";
+              }, 1800);
+            });
+          }
+        }
+
+        function renderResearchHistory() {
+          dom.researchHistoryList.innerHTML = state.researchHistory
+            .map((item, idx) => {
+              const isSelected = idx === state.activeHistoryIndex;
+              return `
+                <button type="button" class="history-item-btn ${isSelected ? "is-selected" : ""}" data-history-index="${idx}">
+                  <span class="history-item-q">${escapeHtml(item.query)}</span>
+                  <span class="history-item-sub">${escapeHtml(item.subject)}</span>
+                </button>
+              `;
+            })
+            .join("");
+
+          dom.researchHistoryList.querySelectorAll("[data-history-index]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const idx = Number(btn.dataset.historyIndex);
+              state.activeHistoryIndex = idx;
+              renderAIResponse(state.researchHistory[idx]);
+              renderResearchHistory();
+            });
+          });
+        }
+
+        function handleResearchQuerySubmit(rawQuery) {
+          const query = rawQuery.trim();
+          if (!query) {
+            dom.researchQueryInput.focus();
+            return;
+          }
+
+          if (!state.isPro && state.credits <= 0) {
+            updateCreditAndPlanUI();
+            openModal(dom.upgradeModalBackdrop);
+            return;
+          }
+
+          if (!state.isPro) {
+            state.credits = Math.max(0, state.credits - 1);
+          }
+
+          const brief = synthesizeLegalBrief(query);
+          state.researchHistory.unshift(brief);
+          state.activeHistoryIndex = 0;
+
+          renderAIResponse(brief);
+          renderResearchHistory();
+          dom.researchQueryInput.value = "";
+          updateCreditAndPlanUI();
+
+          if (!state.isPro && state.credits === 0) {
+            openModal(dom.upgradeModalBackdrop);
+          }
+        }
+
+        // -------------------------------------------------------------------
+        // 7. Online Law Classes Logic
+        // -------------------------------------------------------------------
+        function renderClassFilters() {
+          const subjects = [
+            "All Subjects",
+            "Constitutional Law",
+            "IPC / BNS",
+            "Law of Torts",
+            "Contract Law",
+            "Criminal Procedure",
+            "Drafting & Pleading",
+          ];
+
+          dom.classSubjectFilters.innerHTML = subjects
+            .map((sub) => {
+              const active = state.selectedClassSubject === sub;
+              return `<button type="button" class="filter-btn ${active ? "is-active" : ""}" data-subject="${escapeHtml(sub)}">${escapeHtml(sub)}</button>`;
+            })
+            .join("");
+
+          dom.classSubjectFilters.querySelectorAll("[data-subject]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              state.selectedClassSubject = btn.dataset.subject;
+              renderClassFilters();
+              renderClassesGrid();
+            });
+          });
+        }
+
+        function renderClassesGrid() {
+          const list =
+            state.selectedClassSubject === "All Subjects"
+              ? LAW_CLASSES
+              : LAW_CLASSES.filter((c) => c.subject === state.selectedClassSubject);
+
+          dom.classesGrid.innerHTML = list
+            .map((cls) => {
+              const completed = state.completedClasses.has(cls.id);
+              return `
+                <article class="card class-card">
+                  <div>
+                    <p class="card-kicker tabular-nums">${escapeHtml(cls.subject)} &middot; ${escapeHtml(cls.duration)}</p>
+                    <h3 class="card-title">${escapeHtml(cls.title)}</h3>
+                    <p class="card-excerpt">${escapeHtml(cls.excerpt)}</p>
+                  </div>
+                  <div class="class-card-footer">
+                    <div>
+                      <div class="class-faculty">${escapeHtml(cls.faculty)}</div>
+                      ${completed ? '<div class="completed-label">Completed</div>' : ""}
+                    </div>
+                    <button type="button" class="btn btn-navy" data-start-class="${escapeHtml(cls.id)}" style="min-height: 38px; padding: 7px 14px; font-size: 13px;">
+                      Start Class
+                    </button>
+                  </div>
+                </article>
+              `;
+            })
+            .join("");
+
+          dom.classesGrid.querySelectorAll("[data-start-class]").forEach((btn) => {
+            btn.addEventListener("click", () => openClassModal(btn.dataset.startClass));
+          });
+        }
+
+        function stopLecturePlayback() {
+          state.lecturePlaying = false;
+          if (state.lectureTimer) {
+            clearInterval(state.lectureTimer);
+            state.lectureTimer = null;
+          }
+          if (dom.lecturePlayToggle) {
+            dom.lecturePlayToggle.textContent = "Play Lecture";
+          }
+        }
+
+        function updateLectureProgressUI(cls) {
+          const totalMins = parseInt(cls.duration, 10) || 40;
+          const elapsedMins = Math.floor((state.lectureProgress / 100) * totalMins);
+          const minsStr = String(elapsedMins).padStart(2, "0");
+          dom.lecturePlaybackStatus.textContent = `${minsStr}:00 / ${totalMins}:00`;
+          dom.lectureProgressFill.style.width = `${state.lectureProgress}%`;
+          const chapterIdx = Math.min(
+            cls.outline.length - 1,
+            Math.floor((state.lectureProgress / 100) * cls.outline.length)
+          );
+          dom.lectureActiveChapter.textContent = cls.outline[chapterIdx] || cls.title;
+        }
+
+        function openClassModal(classId) {
+          const cls = LAW_CLASSES.find((c) => c.id === classId);
+          if (!cls) return;
+          state.activeLectureId = cls.id;
+          state.lectureProgress = 14;
+          stopLecturePlayback();
+
+          dom.classModalKicker.textContent = `${cls.subject} · ${cls.duration}`;
+          dom.classModalTitle.textContent = cls.title;
+          dom.lectureFacultyLabel.textContent = cls.faculty;
+          dom.classModalSections.textContent = cls.sections;
+          dom.classModalOutline.innerHTML = cls.outline.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+
+          const isDone = state.completedClasses.has(cls.id);
+          dom.toggleCompleteClassBtn.textContent = isDone ? "Completed" : "Mark as Completed";
+
+          updateLectureProgressUI(cls);
+          openModal(dom.classModalBackdrop);
+        }
+
+        // -------------------------------------------------------------------
+        // 8. Student Notes & Research Library Logic
+        // -------------------------------------------------------------------
+        function renderNotesLibrary() {
+          const items = NOTES_LIBRARY[state.selectedNotesTab] || [];
+          const q = state.notesSearchQuery.trim().toLowerCase();
+          const filtered = q
+            ? items.filter(
+                (it) =>
+                  it.title.toLowerCase().includes(q) ||
+                  it.citation.toLowerCase().includes(q) ||
+                  it.summary.toLowerCase().includes(q)
+              )
+            : items;
+
+          if (filtered.length === 0) {
+            dom.notesGrid.innerHTML = `
+              <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 36px;">
+                <p style="margin: 0; font-weight: 600; color: var(--navy-900);">No matching records found</p>
+                <p style="margin: 6px 0 0; font-size: 13.5px; color: var(--text-muted);">Try clearing your search term or switching library tabs.</p>
+              </div>
+            `;
+            return;
+          }
+
+          dom.notesGrid.innerHTML = filtered
+            .map(
+              (item) => `
+                <article class="card note-card">
+                  <div>
+                    <p class="note-citation">${escapeHtml(item.citation)}</p>
+                    <h3 class="card-title">${escapeHtml(item.title)}</h3>
+                    <p class="card-excerpt">${escapeHtml(item.summary)}</p>
+                  </div>
+                  <div style="display: flex; justify-content: flex-end; padding-top: 12px; border-top: 1px solid var(--border-hairline);">
+                    <button type="button" class="btn btn-outline-dark" data-read-doc="${escapeHtml(item.id)}" style="min-height: 36px; padding: 6px 14px; font-size: 13px;">
+                      Read Full Brief
+                    </button>
+                  </div>
+                </article>
+              `
+            )
+            .join("");
+
+          dom.notesGrid.querySelectorAll("[data-read-doc]").forEach((btn) => {
+            btn.addEventListener("click", () => openReaderModal(btn.dataset.readDoc));
+          });
+        }
+
+        function openReaderModal(docId) {
+          const allDocs = Object.values(NOTES_LIBRARY).flat();
+          const doc = allDocs.find((d) => d.id === docId);
+          if (!doc) return;
+
+          const tabLabels = {
+            "bare-acts": "Bare Act Digest",
+            judgments: "Landmark Judgment Brief",
+            revision: "Exam Revision Notes",
+            memorials: "Sample Moot Court Memorial",
+          };
+
+          dom.readerModalKicker.textContent = tabLabels[state.selectedNotesTab] || "Academic Library";
+          dom.readerModalTitle.textContent = doc.title;
+          dom.readerModalCitation.textContent = doc.citation;
+          dom.readerModalBody.textContent = doc.body;
+          state.activeReaderText = `${doc.title}\n${doc.citation}\n\n${doc.body}`;
+          dom.copyReaderTextBtn.textContent = "Copy Text";
+
+          openModal(dom.readerModalBackdrop);
+        }
+
+        // -------------------------------------------------------------------
+        // 9. Pricing & Checkout Logic
+        // -------------------------------------------------------------------
+        function renderPricing() {
+          dom.pricingGrid.innerHTML = PRICING_PLANS.map((plan) => {
+            const isCurrent = state.activePlanId === plan.id;
+            const featuresHtml = plan.features
+              .map(
+                (f) => `
+                  <li>
+                    <span class="feature-check" aria-hidden="true">&#10003;</span>
+                    <span>${escapeHtml(f)}</span>
+                  </li>
+                `
+              )
+              .join("");
+
+            let ctaBtnHtml = "";
+            if (isCurrent) {
+              ctaBtnHtml = `<button type="button" class="btn btn-outline-dark" disabled style="width: 100%;">Active Plan</button>`;
+            } else if (plan.id === "free") {
+              ctaBtnHtml = `<button type="button" class="btn btn-outline-dark" disabled style="width: 100%;">Starter Included</button>`;
+            } else {
+              ctaBtnHtml = `
+                <button
+                  type="button"
+                  class="btn ${plan.popular ? "btn-gold" : "btn-navy"}"
+                  data-subscribe-plan="${escapeHtml(plan.id)}"
+                  style="width: 100%;"
+                >
+                  ${escapeHtml(plan.cta)}
+                </button>
+              `;
+            }
+
+            return `
+              <article class="card pricing-card ${plan.popular ? "is-popular" : ""} ${isCurrent ? "is-current" : ""}">
+                <div>
+                  <p class="plan-tag">${escapeHtml(plan.tag)}</p>
+                  <h3 class="plan-name">${escapeHtml(plan.name)}</h3>
+                  <div class="plan-price-row">
+                    <span class="plan-price">${escapeHtml(plan.price)}</span>
+                    <span class="plan-period">${escapeHtml(plan.period)}</span>
+                  </div>
+                  <ul class="plan-features">${featuresHtml}</ul>
+                </div>
+                <div>${ctaBtnHtml}</div>
+              </article>
+            `;
+          }).join("");
+
+          dom.pricingGrid.querySelectorAll("[data-subscribe-plan]").forEach((btn) => {
+            btn.addEventListener("click", () => openCheckoutModal(btn.dataset.subscribePlan));
+          });
+        }
+
+        function openCheckoutModal(planId) {
+          const plan = PRICING_PLANS.find((p) => p.id === planId) || PRICING_PLANS[1];
+          state.checkoutPlanId = plan.id;
+          dom.checkoutPlanName.textContent = plan.name;
+          dom.checkoutPlanPrice.textContent = `${plan.price} ${plan.period}`;
+          dom.paymentFormFeedback.className = "form-feedback";
+          dom.paymentFormFeedback.textContent = "";
+          openModal(dom.paymentModalBackdrop);
+        }
+
+        // -------------------------------------------------------------------
+        // 10. Event Bindings
+        // -------------------------------------------------------------------
+        function bindEvents() {
+          // Top Navigation & Mobile Menu
+          dom.navLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              const target = link.dataset.nav;
+              dom.mobileDrawer.classList.remove("is-open");
+              dom.mobileMenuBtn.setAttribute("aria-expanded", "false");
+
+              if (target === "home") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                dom.navLinks.forEach((n) => n.classList.toggle("is-active", n.dataset.nav === "home"));
+              } else if (target === "contact") {
+                document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+                dom.navLinks.forEach((n) => n.classList.toggle("is-active", n.dataset.nav === "contact"));
+              } else {
+                switchTab(target);
+                document.getElementById("workspace").scrollIntoView({ behavior: "smooth" });
+              }
+            });
+          });
+
+          dom.mobileMenuBtn.addEventListener("click", () => {
+            const open = dom.mobileDrawer.classList.toggle("is-open");
+            dom.mobileMenuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+
+          // Hero CTA jumps
+          document.querySelectorAll("[data-jump-tab]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              switchTab(btn.dataset.jumpTab);
+              document.getElementById("workspace").scrollIntoView({ behavior: "smooth" });
+            });
+          });
+
+          // Workspace Tabs
+          dom.tabButtons.forEach((btn) => {
+            btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+          });
+
+          // Header Credit Pill
+          dom.creditTrackerPill.addEventListener("click", () => {
+            if (!state.isPro && state.credits <= 0) {
+              openModal(dom.upgradeModalBackdrop);
+            } else {
+              switchTab("research");
+              document.getElementById("workspace").scrollIntoView({ behavior: "smooth" });
+              dom.researchQueryInput.focus();
+            }
+          });
+
+          // AI Research Form
+          dom.aiResearchForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            handleResearchQuerySubmit(dom.researchQueryInput.value);
+          });
+
+          dom.sampleButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const q = btn.dataset.sample;
+              dom.researchQueryInput.value = q;
+              handleResearchQuerySubmit(q);
+            });
+          });
+
+          dom.inlineUpgradeBtn.addEventListener("click", () => {
+            openModal(dom.upgradeModalBackdrop);
+          });
+
+          // Notes Sub-Tabs & Search
+          dom.notesSubTabs.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              state.selectedNotesTab = btn.dataset.notesTab;
+              dom.notesSubTabs.forEach((b) => b.classList.toggle("is-active", b === btn));
+              renderNotesLibrary();
+            });
+          });
+
+          dom.librarySearchInput.addEventListener("input", (e) => {
+            state.notesSearchQuery = e.target.value;
+            renderNotesLibrary();
+          });
+
+          // Upgrade Modal Plan Selector
+          dom.upgradeChoiceButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              state.selectedUpgradePlan = btn.dataset.upgradePlan;
+              dom.upgradeChoiceButtons.forEach((b) => b.classList.toggle("is-selected", b === btn));
+              const plan = PRICING_PLANS.find((p) => p.id === state.selectedUpgradePlan);
+              if (plan) {
+                dom.proceedToCheckoutBtn.textContent = `Continue with ${plan.price} Pass`;
+              }
+            });
+          });
+
+          dom.proceedToCheckoutBtn.addEventListener("click", () => {
+            closeModal(dom.upgradeModalBackdrop);
+            openCheckoutModal(state.selectedUpgradePlan);
+          });
+
+          // Payment Modal Methods & Submission
+          dom.paymentMethodsGroup.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              state.selectedPayMethod = btn.dataset.payMethod;
+              dom.paymentMethodsGroup.forEach((b) => b.classList.toggle("is-selected", b === btn));
+            });
+          });
+
+          dom.paymentConfirmForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const studentName = document.getElementById("checkoutStudentName").value.trim();
+            const studentEmail = document.getElementById("checkoutStudentEmail").value.trim();
+
+            if (studentName.length < 2 || !studentEmail.includes("@")) {
+              dom.paymentFormFeedback.className = "form-feedback is-error";
+              dom.paymentFormFeedback.textContent = "Please enter your full name and a valid student email address.";
+              return;
+            }
+
+            const activatedPlan = PRICING_PLANS.find((p) => p.id === state.checkoutPlanId) || PRICING_PLANS[1];
+            state.isPro = true;
+            state.activePlanId = activatedPlan.id;
+            state.activePlanName = activatedPlan.name;
+
+            dom.paymentFormFeedback.className = "form-feedback is-success";
+            dom.paymentFormFeedback.textContent =
+              `${activatedPlan.name} activated for ${studentName} via ${state.selectedPayMethod}. Unlimited AI Legal Research is now unlocked.`;
+
+            updateCreditAndPlanUI();
+
+            setTimeout(() => {
+              closeModal(dom.paymentModalBackdrop);
+              dom.paymentConfirmForm.reset();
+            }, 1200);
+          });
+
+          // Video Class Controls
+          dom.lecturePlayToggle.addEventListener("click", () => {
+            const cls = LAW_CLASSES.find((c) => c.id === state.activeLectureId);
+            if (!cls) return;
+
+            if (state.lecturePlaying) {
+              stopLecturePlayback();
+            } else {
+              state.lecturePlaying = true;
+              dom.lecturePlayToggle.textContent = "Pause Lecture";
+              state.lectureTimer = setInterval(() => {
+                state.lectureProgress = state.lectureProgress >= 100 ? 0 : state.lectureProgress + 4;
+                updateLectureProgressUI(cls);
+              }, 700);
+            }
+          });
+
+          dom.toggleCompleteClassBtn.addEventListener("click", () => {
+            if (!state.activeLectureId) return;
+            if (state.completedClasses.has(state.activeLectureId)) {
+              state.completedClasses.delete(state.activeLectureId);
+              dom.toggleCompleteClassBtn.textContent = "Mark as Completed";
+            } else {
+              state.completedClasses.add(state.activeLectureId);
+              dom.toggleCompleteClassBtn.textContent = "Completed";
+            }
+            renderClassesGrid();
+          });
+
+          // Reader Copy
+          dom.copyReaderTextBtn.addEventListener("click", () => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(state.activeReaderText).catch(() => {});
+            }
+            dom.copyReaderTextBtn.textContent = "Copied";
+            setTimeout(() => {
+              dom.copyReaderTextBtn.textContent = "Copy Text";
+            }, 1600);
+          });
+
+          // Contact Support Form
+          dom.contactSupportForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("contactName").value.trim();
+            const email = document.getElementById("contactEmail").value.trim();
+            const message = document.getElementById("contactMessage").value.trim();
+
+            if (name.length < 2 || !email.includes("@") || message.length < 6) {
+              dom.contactFormFeedback.className = "form-feedback is-error";
+              dom.contactFormFeedback.textContent = "Please provide your name, a valid email address, and a brief inquiry message.";
+              return;
+            }
+
+            dom.contactFormFeedback.className = "form-feedback is-success";
+            dom.contactFormFeedback.textContent =
+              `Thank you, ${name}. Your inquiry has been logged for our team at deshkavakil@gmail.com (WhatsApp support: +91 8240642015).`;
+            dom.contactSupportForm.reset();
+          });
+
+          // Modal close buttons & backdrop/Escape
+          document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const target = document.getElementById(btn.dataset.closeModal);
+              if (target) closeModal(target);
+            });
+          });
+
+          document.querySelectorAll(".modal-backdrop").forEach((backdrop) => {
+            backdrop.addEventListener("click", (e) => {
+              if (e.target === backdrop) closeModal(backdrop);
+            });
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+              document.querySelectorAll(".modal-backdrop.is-open").forEach((backdrop) => {
+                closeModal(backdrop);
+              });
+            }
+          });
+        }
+
+        // -------------------------------------------------------------------
+        // 11. Initial Hydration
+        // -------------------------------------------------------------------
+        function init() {
+          // Seed initial preview brief without consuming any of the 5 free credits
+          const initialBrief = synthesizeLegalBrief(
+            "Explain Article 21 due process in Maneka Gandhi v. Union of India"
+          );
+          initialBrief.query = "Sample Brief: Article 21 Due Process (Maneka Gandhi)";
+          state.researchHistory.push(initialBrief);
+
+          renderAIResponse(initialBrief);
+          renderResearchHistory();
+          renderClassFilters();
+          renderClassesGrid();
+          renderNotesLibrary();
+          renderPricing();
+          updateCreditAndPlanUI();
+          bindEvents();
+        }
+
+        init();
+      })();
+    </script>
+  </body>
+</html>
